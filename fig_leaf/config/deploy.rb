@@ -1,5 +1,5 @@
 set :application, "fig_leaf"
-set :repository, 'git@github.com:railsrumble/rr09-team-222.git'
+set :repository, 'git@github.com:railsrumble/rr09-team-222.git/fig_leaf'
 set :user, "root"
 set :domain, "#{user}@97.107.138.82"
 set :deploy_to, "/var/apps/fig_leaf"
