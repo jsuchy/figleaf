@@ -1,25 +1,57 @@
-%table
-  %tr
-    %td Feels Like
-    %td= @weather.feels_like_in_farenheit
-  %tr
-    %td Feels Like Description
-    %td= @weather.feels_like_description
-  %tr
-    %td Low
-    %td= @weather.low
-  %tr
-    %td High
-    %td= @weather.high
-  %tr
-    %td Wind Speed
-    %td= @weather.wind_speed
-  %tr
-    %td Wind Speed Description
-    %td= @weather.wind_speed_description
-  %tr
-    %td Description(Unaltered)
-    %td= @weather.description
-  %tr
-    %td Description Category (for images)
-    %td= @weather.description_category
+#date_wrapper
+  /= image_tag("arrow_left.png", :id => "arrow_left")
+  /= image_tag("arrow_right.png", :id => "arrow_right")
+
+  %h1#banner_date
+    = Date.today.strftime("%A, %B %e")
+
+.clear
+
+/ #character_area
+#banner_head.banner
+  %h2 
+    = "Sunny"
+  %p
+    = "!"
+
+#banner_neck.banner
+  %h2
+    = "2 mph wind"
+  %p
+    = "!"
+    
+#banner_body.banner
+  %h2
+    = "98º F"
+  %p
+    = "!"
+
+#banner_details
+  #details_content
+    %table
+      %tr
+        %td Feels Like:
+        %td.value= @weather.feels_like_in_farenheit
+      %tr
+        %td Feels Like Description:
+        %td.value= @weather.feels_like_description
+      %tr
+        %td Low:
+        %td.value= @weather.low
+      %tr
+        %td High:
+        %td.value= @weather.high
+      %tr
+        %td Wind Speed:
+        %td.value= @weather.wind_speed
+      %tr
+        %td Wind Speed Description:
+        %td.value= @weather.wind_speed_description
+      %tr
+        %td Description (Unaltered):
+        %td.value= @weather.description
+      %tr
+        %td Description Category (for images):
+        %td.value= @weather.description_category
+        
+#character
