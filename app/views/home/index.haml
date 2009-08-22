@@ -3,6 +3,4 @@ What should I wear today?
   = text_field_tag "location", 'Zip Code/ City, State'
   = submit_tag "search"
 
--if @cities
-  - @cities.each do |city|
-    =city.name
+= render :partial => "home/cities" if @cities

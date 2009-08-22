@@ -3,6 +3,8 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe SearchController do
 
   it "should render the homepage" do
+    WeatherManCaller.stub!(:find_cities_for)
+    
     post :index
     
     response.should render_template("home/index")

@@ -44,3 +44,8 @@ Rails::Initializer.run do |config|
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
 end
+
+#Setup for WeatherMan API, these need to be set only one time
+require "weather_man"
+WeatherMan.partner_id = '1133672529'
+WeatherMan.license_key = 'ecb7aeada0996650'
