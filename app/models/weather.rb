@@ -21,7 +21,7 @@ class Weather
   def feels_like_description
     return :cold if feels_like_in_farenheit <= 32
     return :chilly if (33..55).include?(feels_like_in_farenheit)
-    return :nice if (56..79).include?(feels_like_in_farenheit)
+    return :warm if (56..79).include?(feels_like_in_farenheit)
     return :hot if feels_like_in_farenheit >= 80
   end
   

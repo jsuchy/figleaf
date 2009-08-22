@@ -46,8 +46,8 @@ describe Weather do
         temperature_should_feel_like("32", :cold)
         temperature_should_feel_like("33", :chilly)
         temperature_should_feel_like("55", :chilly)
-        temperature_should_feel_like("56", :nice)
-        temperature_should_feel_like("79", :nice)
+        temperature_should_feel_like("56", :warm)
+        temperature_should_feel_like("79", :warm)
         temperature_should_feel_like("80", :hot)
       end
     end
