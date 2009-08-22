@@ -13,3 +13,7 @@ Then /^I should see the information for "([^\"]*)"$/ do |location_id|
   response.body.should include weather.high
   response.body.should include weather.wind_speed
 end
+
+Then /^I should see an error message$/ do
+  response.should have_tag("div[class=error_message]")
+end

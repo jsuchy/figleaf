@@ -20,5 +20,10 @@ Feature: Search
     Then I should be on the display weather page for "60048"
     Then I should see the information for "60048"
   
-  
-  
+  Scenario: No matching results
+    Given I am on the homepage
+    When I fill in "location" with "gibberish"
+    And I press "search"
+    Then I should be on the homepage
+    And I should see an error message
+    

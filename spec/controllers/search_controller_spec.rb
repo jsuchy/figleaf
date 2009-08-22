@@ -17,6 +17,7 @@ describe SearchController do
     post :index, :location => "some location"
     
     assigns[:cities].should == cities
+    flash[:errors].should_not be_empty
   end
   
   it "should redirect to the weather controller if there is only one match" do
@@ -29,4 +30,12 @@ describe SearchController do
     
   end
   
+  it "should redirect to the home controller if there is no match" do
+    CitySearch.should_receive(:find).with("some other location").and_return([])
+    
+    post :index, :location => "some other location"
+    
+    response.should redirect_to(:controller => :home, :action => :index)
+    flash[:errors].should_not be_empty
+  end
 end
