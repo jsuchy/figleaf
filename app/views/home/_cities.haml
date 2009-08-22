@@ -2,4 +2,5 @@
 %h4 We found more than one city!
 %ul
   - @cities.each do |city|
-    %li=city.name
+    %li
+      =link_to city.name, :controller => 'weather', :action => 'display', :id => city.id
