@@ -1,0 +1,29 @@
+!!! XML
+!!! STRICT
+%html
+  %head
+    %title figleaf
+    = stylesheet_link_tag "figleaf"
+  %body
+    #header_wrapper
+      #header
+        = link_to(image_tag("logo.png"), "/")
+        = image_tag("?.png", :id => "tagline")
+    #content_wrapper
+      #content
+        = yield
+    #footer_wrapper
+      #footer
+        %p.nav
+          = link_to "Change Location", "/"
+
+        %p
+          Copyright 2009.
+          = link_to "@ecomba", "http://www.twitter.com/ecomba"
+          ,
+          = link_to "@emeyer8thlight", "http://www.twitter.com/emeyer8thlight"
+          ,
+          = link_to "@paulwpagel", "http://www.twitter.com/paulwpagel"
+          ,
+          = link_to "@trptcolin", "http://www.twitter.com/trptcolin"
+        
