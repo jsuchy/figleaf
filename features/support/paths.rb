@@ -10,7 +10,9 @@ module NavigationHelpers
     
     when /the homepage/
       '/'
-    
+    when /the display weather page for "(.*)"/
+      "/weather/display/#{$1}"
+
     # Add more mappings here.
     # Here is a more fancy example:
     #

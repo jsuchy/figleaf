@@ -11,4 +11,4 @@ Feature: Weather report
     When I follow "London, United Kingdom"
     Then I should see "low temperature"
     And I should see "high temperature"
-    And I should see "wind speed"
+    And I should see "12345"
