@@ -7,6 +7,7 @@ class Weather
   wrap_weather_man_response "forecast.today.high", "high"
   wrap_weather_man_response "current_conditions.feels_like.to_i", "feels_like_in_farenheit"
   wrap_weather_man_response "current_conditions.wind.speed.to_i", "wind_speed"
+  wrap_weather_man_response "forecast.today.day.description", "description"
   
   def initialize(weather_man_response)
     @weather_man_response = weather_man_response
@@ -28,5 +29,16 @@ class Weather
     return :calm if wind_speed <= 10 
     return :breezy if (11..30).include?(wind_speed)
     return :windy if wind_speed >= 31
+  end
+  
+  def description_category
+    return :sunny if description.match(/Sunny/)
+    return :sunny if description.match(/Fair/)
+    return :sunny if description.match(/Clear/)
+    return :cloudy if description.match(/Cloudy/)
+    return :snowy if description.match(/Snow/)
+    return :rainy if description.match(/Showers/)
+    return :rainy if description.match(/Storms/)
+    return :rainy if description.match(/Rain/)
   end
 end

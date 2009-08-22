@@ -94,9 +94,50 @@ describe Weather do
     end
   end
   
-  it "shoudl give us a description for the day" do
-    weather = Weather.new(@weather_man_response)
-
-    #Cloudy, Sunny, Partly Cloudy, Mostly Cloudy, Fair, Mostly Clear, Clear, Scattered T-Storms
+  describe "description" do
+    def description_should_map_to_category(description, category_symbol)
+      @day.stub!(:description).and_return(description)
+      @weather.description_category.should == category_symbol
+    end
+    
+    before(:each) do
+      @weather = Weather.new(@weather_man_response)
+      @day = mock(WeatherManForecastPart)
+      @today.stub!(:day).and_return(@day)
+    end
+    
+    it "should return the description" do
+      @day.should_receive(:description).and_return("Mostly Cloudy")      
+      @weather.description.should == "Mostly Cloudy"
+    end
+    
+    it "should be sunny" do
+      description_should_map_to_category("Sunny", :sunny)
+      description_should_map_to_category("Partly Sunny", :sunny)
+      description_should_map_to_category("Sunny Maybe", :sunny)
+      description_should_map_to_category("Fair", :sunny)
+      description_should_map_to_category("Mostly Clear", :sunny)
+      description_should_map_to_category("Clear", :sunny)
+    end
+    
+    it "should be cloudy" do
+      description_should_map_to_category("Cloudy", :cloudy)
+      description_should_map_to_category("Partly Cloudy", :cloudy)
+      description_should_map_to_category("Mostly Cloudy", :cloudy)
+      description_should_map_to_category("Cloudy Sometimes", :cloudy)
+    end
+    
+    it "should be rainy" do
+      description_should_map_to_category("Scattered T-Storms", :rainy)
+      description_should_map_to_category("PM Showers", :rainy)
+      description_should_map_to_category("Rain", :rainy)
+      description_should_map_to_category("Showers", :rainy)
+    end
+    
+    it "should be snowy" do
+      description_should_map_to_category("Snow", :snowy)
+      description_should_map_to_category("Rain / Snow", :snowy)
+      description_should_map_to_category("Rain / Snow Showers", :snowy)
+    end
   end
 end
