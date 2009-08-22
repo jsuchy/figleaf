@@ -21,8 +21,9 @@ Rails::Initializer.run do |config|
   # config.gem "aws-s3", :lib => "aws/s3"
   config.gem "jdpace-weatherman"
   config.gem "haml"
+  config.gem "sqlite3-ruby", :lib => "sqlite3"
   config.gem "cucumber"
-  config.gem "sqlite3"
+  config.gem "webrat"
   
   
   # Only load the plugins named here, in the order given (default is alphabetical).
