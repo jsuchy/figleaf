@@ -22,7 +22,6 @@ Rails::Initializer.run do |config|
   config.gem "xml-simple", :lib => "xmlsimple"
   config.gem "jdpace-weatherman", :lib => "weather_man"
   config.gem "haml"
-  config.gem "sqlite3-ruby", :lib => "sqlite3"
   config.gem "vlad", :version => "1.3.2"
   
   
