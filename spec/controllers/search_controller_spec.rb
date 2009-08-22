@@ -3,7 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe SearchController do
 
   it "should render the homepage" do
-    WeatherManCaller.stub!(:find_cities_for)
+    CitySearch.stub!(:find)
     
     post :index
     
@@ -12,7 +12,7 @@ describe SearchController do
   
   it "should get the list of matches given a location" do
     cities = [mock("city")]
-    WeatherManCaller.should_receive(:find_cities_for).with("some location").and_return(cities)
+    CitySearch.should_receive(:find).with("some location").and_return(cities)
     
     post :index, :location => "some location"
     
