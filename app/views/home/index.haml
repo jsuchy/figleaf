@@ -1,1 +1,8 @@
 What should I wear today?
+- form_tag "/search" do
+  = text_field_tag "location", 'Zip Code/ City, State'
+  = submit_tag "search"
+
+-if @cities
+  - @cities.each do |city|
+    =city.name

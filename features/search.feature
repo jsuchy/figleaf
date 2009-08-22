@@ -9,6 +9,7 @@ Feature: Search
     
   Scenario: Search with many results
     Given I am on the homepage
-    When I fill in "query" with "London"
-    And I press "submit"
-    Then I should see a list of possible cities
+    When I fill in "location" with "London"
+    And I press "search"
+    Then I should see the cities for "London"
+    

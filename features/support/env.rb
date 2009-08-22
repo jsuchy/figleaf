@@ -23,3 +23,5 @@ end
 
 require 'cucumber/rails/rspec'
 require 'webrat/core/matchers'
+
+require 'mock_weather_man_caller'
