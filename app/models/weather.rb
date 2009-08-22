@@ -3,10 +3,10 @@ class Weather
     class_eval "def #{new_name}; @weather_man_response.#{old_name}; end\n"
   end
   
-  wrap_weather_man_response "current_conditions.low", "low"
-  wrap_weather_man_response "current_conditions.high", "high"
-  wrap_weather_man_response "current_conditions.feels_like", "feels_like_in_farenheit"
-  wrap_weather_man_response "current_conditions.wind.speed", "wind_speed"
+  wrap_weather_man_response "forecast.today.low", "low"
+  wrap_weather_man_response "forecast.today.high", "high"
+  wrap_weather_man_response "current_conditions.feels_like.to_i", "feels_like_in_farenheit"
+  wrap_weather_man_response "current_conditions.wind.speed.to_i", "wind_speed"
   
   def initialize(weather_man_response)
     @weather_man_response = weather_man_response
@@ -25,8 +25,8 @@ class Weather
   end
   
   def wind_speed_description
-    return :calm if wind_speed.to_i <= 10 
-    return :breezy if (11..30).include?(wind_speed.to_i)
-    return :windy if wind_speed.to_i >= 31
+    return :calm if wind_speed <= 10 
+    return :breezy if (11..30).include?(wind_speed)
+    return :windy if wind_speed >= 31
   end
 end

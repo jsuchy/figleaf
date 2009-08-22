@@ -9,7 +9,6 @@ Feature: Weather report
     And I press "search"
     Then I should see the cities for "London"
     When I follow "London, United Kingdom"
-    Then I should see the weather report for "London" # This needs fleshing out to see which info we are returning
-  
-  
-  
+    Then I should see "low temperature"
+    And I should see "high temperature"
+    And I should see "wind speed"

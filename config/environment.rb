@@ -49,3 +49,5 @@ end
 require "weather_man"
 WeatherMan.partner_id = '1133672529'
 WeatherMan.license_key = 'ecb7aeada0996650'
+
+# require File.expand_path(File.dirname(__FILE__) + '/../features/support/mock_weather_man')

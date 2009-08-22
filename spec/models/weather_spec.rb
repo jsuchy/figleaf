@@ -3,9 +3,11 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe Weather do
   before(:each) do
     @weather_man = mock(WeatherMan)
-    @weather_man_response = mock(WeatherManResponse, :current_conditions => nil)
     @current_conditions = mock(WeatherManCurrentConditions)
-    @weather_man_response.stub!(:current_conditions).and_return(@current_conditions)
+    @today = mock(WeatherManForecastDay)
+    @forecast = mock(WeatherManForecast, :today => @today)
+
+    @weather_man_response = mock(WeatherManResponse, :current_conditions => @current_conditions, :forecast => @forecast)
   end
 
   it "should return the weather for a given location id" do
@@ -41,24 +43,24 @@ describe Weather do
       end
 
       it "should calculate the temperature scale" do
-        temperature_should_feel_like(32, :cold)
-        temperature_should_feel_like(33, :chilly)
-        temperature_should_feel_like(55, :chilly)
-        temperature_should_feel_like(56, :nice)
-        temperature_should_feel_like(79, :nice)
-        temperature_should_feel_like(80, :hot)
+        temperature_should_feel_like("32", :cold)
+        temperature_should_feel_like("33", :chilly)
+        temperature_should_feel_like("55", :chilly)
+        temperature_should_feel_like("56", :nice)
+        temperature_should_feel_like("79", :nice)
+        temperature_should_feel_like("80", :hot)
       end
     end
     
     describe "high and low" do
       it "should tell us the low temperature" do
-        @current_conditions.should_receive(:low).and_return(60)
+        @today.should_receive(:low).and_return(60)
         weather = Weather.new(@weather_man_response)
         weather.low.should == 60
       end
 
       it "should tell us the high temperature" do
-        @current_conditions.should_receive(:high).and_return(80)
+        @today.should_receive(:high).and_return(80)
         weather = Weather.new(@weather_man_response)
         weather.high.should == 80
       end
@@ -79,7 +81,7 @@ describe Weather do
     it "should tell us the wind speed" do
       @wind.should_receive(:speed).and_return("9")
       weather = Weather.new(@weather_man_response)
-      weather.wind_speed.should == "9"
+      weather.wind_speed.should == 9
     end
     
     describe "scales" do

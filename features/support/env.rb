@@ -24,4 +24,5 @@ end
 require 'cucumber/rails/rspec'
 require 'webrat/core/matchers'
 
-require File.expand_path(File.dirname(__FILE__) + '/mock_city_search')
+# require File.expand_path(File.dirname(__FILE__) + '/mock_city_search')
+require File.expand_path(File.dirname(__FILE__) + '/mock_weather_man')
