@@ -1,0 +1,72 @@
+--- !ruby/object:Gem::Specification 
+name: jdpace-weatherman
+version: !ruby/object:Gem::Version 
+  version: 0.1.2
+platform: ruby
+authors: 
+- Jared Pace
+autorequire: 
+bindir: bin
+cert_chain: []
+
+date: 2008-10-03 00:00:00 +01:00
+default_executable: 
+dependencies: 
+- !ruby/object:Gem::Dependency 
+  name: xml-simple
+  type: :runtime
+  version_requirement: 
+  version_requirements: !ruby/object:Gem::Requirement 
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        version: 1.0.11
+    version: 
+description: A wrapper for the Weather Channel, inc (weather.com) XML api covers most features of the api. Current Conditions, Forecasting, and access to the promotional links that you are required to display as part of the API TOS.
+email: jared@codewordstudios.com
+executables: []
+
+extensions: []
+
+extra_rdoc_files: 
+- README.rdoc
+files: 
+- lib/weather_man.rb
+- lib/weather_man_response.rb
+- spec/cc_only_response.xml
+- spec/default_response.xml
+- spec/forecast_only_response.xml
+- spec/weather_man_response_spec.rb
+- spec/weather_man_spec.rb
+- README.rdoc
+has_rdoc: true
+homepage: http://github.com/jdpace/weatherman
+licenses: []
+
+post_install_message: 
+rdoc_options: 
+- --main
+- README.rdoc
+require_paths: 
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      version: "0"
+  version: 
+required_rubygems_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      version: "0"
+  version: 
+requirements: []
+
+rubyforge_project: 
+rubygems_version: 1.3.5
+signing_key: 
+specification_version: 2
+summary: Ruby gem for accessing the Weather Channel XML API based on rweather.
+test_files: []
+
