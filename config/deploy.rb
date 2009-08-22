@@ -4,7 +4,6 @@ set :user, "root"
 set :domain, "#{user}@97.107.138.82"
 set :deploy_to, "/var/apps/fig_leaf"
 set :rails_env, "production"
-set :revision, "fig_leaf"
 # set :web_command, "sudo apache2ctl"
 
   
