@@ -8,11 +8,9 @@ describe WeatherController do
   end
   
   it "display the weather report" do
-    weather_man = mock(WeatherMan)
     weather_in_location = mock(WeatherManResponse)
-    WeatherMan.should_receive(:new).with("UKXX0085").and_return(weather_man)
-    weather_man.should_receive(:fetch).and_return(weather_in_location)
-    character = mock(Character, :weather => weather_in_location)
+    Weather.should_receive(:in).with("UKXX0085").and_return(weather_in_location)
+    character = mock(Character)
     PersonalAssistant.should_receive(:dress_for).with(weather_in_location).and_return(character)
     
     get :display, :id => "UKXX0085"
