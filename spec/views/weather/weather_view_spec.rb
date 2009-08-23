@@ -51,12 +51,6 @@ describe "weather view spec" do
     should_render_and_include("56°F")
   end
   
-  it "should display the visibility" do
-    @weather.stub!(:visibility).and_return(6.2)
-    
-    should_render_and_include("6.2 miles")
-  end
-  
   it "should display the sunrise time" do
     @weather.stub!(:sunrise_time).and_return("6:17 AM")
     
