@@ -28,8 +28,8 @@ class Garment
   COKE = new("coke_glasses", "Cool as ice!") unless defined?(COKE)
   LOIN = new("loincloth", "Dainty!") unless defined?(LOIN)
   SOMBRERO = new("sombrero", "En fuego!") unless defined?(SOMBRERO)
-  BARE = new("bare", "")
-  HANDKERCHIEF = new ("handkerchief", "Okies beware!")
-  DOG_TAGS = new("dog_tags", "Charge!")
-  SHORTS = new("shorts", "Running with the devil!")
+  BARE = new("bare", "") unless defined?(BARE)
+  HANDKERCHIEF = new("handkerchief", "Okies beware!") unless defined?(HANDKERCHIEF)
+  DOG_TAGS = new("dog_tags", "Charge!") unless defined?(DOG_TAGS)
+  SHORTS = new("shorts", "Running with the devil!") unless defined?(SHORTS)
 end

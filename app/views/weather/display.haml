@@ -27,7 +27,7 @@
       %table
         %tr
           %td Temperature:
-          %td.value= "#{@weather.temperature}º F"
+          %td.value= "#{@weather.temperature}º F/#{to_celcius(@weather)}º C"
         %tr
           %td Wind:
           %td.value= "#{@weather.wind_direction} at #{@weather.wind_speed} mph"
