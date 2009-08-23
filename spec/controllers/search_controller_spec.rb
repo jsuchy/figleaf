@@ -8,6 +8,7 @@ describe SearchController do
     post :index
     
     response.should render_template("home/index")
+    assigns[:homepage].should == true
   end
   
   it "should get the list of matches given a location" do
@@ -29,7 +30,6 @@ describe SearchController do
     post :index, :location => "some location"
     
     response.should redirect_to(:controller => :weather, :action => :display, :id => "location_id")
-    
   end
   
   it "should redirect to the home controller if there is no match" do

@@ -233,6 +233,12 @@ a:hover
   top: 50px;
 }
 
+.banner_details.sample_cities
+{
+  right: 0;
+  top: 50px;
+}
+
 .banner_details .top
 {
   background: url(/images/bg_banner_details_top.png) no-repeat 0 0;
@@ -281,8 +287,8 @@ a:hover
 #character
 {
   position: absolute;
-  top: 76px;
-  left: 344px;
+  top: 56px;
+  left: 324px;
 }
 
 #character img

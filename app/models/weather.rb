@@ -1,6 +1,6 @@
 class Weather
   attr_reader :weather_man_response
-
+  
   def self.wrap_weather_man_response(old_name, new_name)
     class_eval "def #{new_name}; @weather_man_response.#{old_name}; end\n"
   end
@@ -54,4 +54,9 @@ class Weather
     return :rainy if description.match(/Rain/)
     return :cloudy
   end
+  
+  alias :temp :feels_like_description
+  alias :wind :wind_speed_description
+  alias :prec :description_category
+  
 end
