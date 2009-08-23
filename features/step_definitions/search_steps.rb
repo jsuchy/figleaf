@@ -24,3 +24,13 @@ end
 Then /^I should not see an error message$/ do
   response.should_not have_tag("div[class=error_message]")
 end
+
+Given /^a search for "([^\"]*)" returns no results$/ do |arg1|
+  #TODO - EWM this is bad!  Clean me up!
+  class Weather
+    def valid?
+      false
+    end
+  end
+end
+

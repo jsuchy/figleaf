@@ -26,6 +26,34 @@ describe Weather do
     Weather.in("blah").should == weather
   end
   
+  describe "validity" do
+    it "should be valid" do
+      weather = Weather.new(@weather_man_response)
+      
+      weather.should be_valid
+    end
+    
+    it "should not be valid with a nil response" do
+      weather = Weather.new(nil)
+      
+      weather.should_not be_valid
+    end
+    
+    it "should not be valid if the current_conditions is nil" do
+      @weather_man_response.stub!(:current_conditions).and_return(nil)
+      weather = Weather.new(@weather_man_response)
+      
+      weather.should_not be_valid
+    end
+    
+    it "should not be valid if the forecast is nil" do
+      @weather_man_response.stub!(:forecast).and_return(nil)
+      weather = Weather.new(@weather_man_response)
+      
+      weather.should_not be_valid
+    end
+  end
+  
   describe "Temperature:" do
     describe "scales" do
       def temperature_should_feel_like(temperature, feels_like_symbol)
@@ -106,7 +134,7 @@ describe Weather do
       @weather.sunset_time.should == "8:46 PM"
     end
   end
-  
+    
   describe "Wind:" do
     def wind_speed_should_map_to_description(speed, description_symbol)
       @wind.stub!(:speed).and_return(speed)
@@ -127,6 +155,12 @@ describe Weather do
     it "should return the wind direction" do
       @wind.should_receive(:direction).and_return("NW")
       @weather.wind_direction.should == "NW"
+    end
+    
+    it "should return nil if the current_conditions are nil" do
+      @weather_man_response.stub!(:current_conditions).and_return(nil)
+      @weather.wind_speed.should be_nil
+      @weather.wind_direction.should be_nil
     end
     
     describe "scales" do

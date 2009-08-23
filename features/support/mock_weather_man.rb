@@ -102,6 +102,8 @@ class WeatherMan
       return [WeatherMan.mock("UKXX0085", "London, United Kingdom"), WeatherMan.mock("CAXX0255", "London, Canada")]
     elsif search_criteria == "60048"
       return [WeatherMan.mock("60048", "Libertyville, IL (60048)")]
+    elsif search_criteria == "badlocation"
+      return [WeatherMan.mock("badlocation", "badlocation")]
     else
       return []
     end

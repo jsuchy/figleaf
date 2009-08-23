@@ -13,3 +13,12 @@ Feature: Weather report
     And I should see "Mist"
     And I should see "29.45"
     And I should see "NNW"
+
+  Scenario: Bad location
+    Given a search for "badlocation" returns no results
+    When I go to the display weather page for "badlocation"
+    Then I should be on the homepage
+    And I should see an error message
+  
+  
+  
