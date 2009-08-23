@@ -59,7 +59,7 @@ EOS
     return :cloudy if description.match(/Thunder/)
     return :snowy if description.match(/Snow/)
     return :rainy if description.match(/Showers/)
-    return :rainy if description.match(/Storms/)
+    return :rainy if description.match(/Storm/)
     return :rainy if description.match(/Rain/)
     return :cloudy
   end

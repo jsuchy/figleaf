@@ -210,6 +210,7 @@ describe Weather do
       description_should_map_to_category("PM Showers", :rainy)
       description_should_map_to_category("Rain", :rainy)
       description_should_map_to_category("Showers", :rainy)
+      description_should_map_to_category("T-Storm", :rainy)
     end
     
     it "should be snowy" do
