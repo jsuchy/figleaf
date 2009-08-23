@@ -3,6 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 describe "weather view spec" do
   before(:each) do
     @weather = mock(Weather, :null_object => true)
+    Outfit.stub!(:find).and_return(mock(Outfit, :null_object => true))
     assigns[:weather] = @weather
   end
   
