@@ -19,7 +19,7 @@ EOS
   wrap_weather_man_response "current_conditions.feels_like.to_i", "feels_like_in_farenheit"
   wrap_weather_man_response "current_conditions.wind.speed.to_i", "wind_speed"
   wrap_weather_man_response "current_conditions.wind.direction", "wind_direction"
-  wrap_weather_man_response "current_conditions.description", "description"
+  wrap_weather_man_response "current_conditions.description", "unaltered_description"
   wrap_weather_man_response "current_conditions.uv.index.to_i", "uv_index"
   wrap_weather_man_response "current_conditions.uv.description", "uv_description"
   wrap_weather_man_response "current_conditions.humidity.to_i", "humidity"
@@ -50,6 +50,11 @@ EOS
     return :calm if wind_speed <= 7 
     return :breezy if (8..20).include?(wind_speed)
     return :windy if wind_speed >= 21
+  end
+  
+  def description
+    return "Who Knows!" if unaltered_description == "N/A"
+    return unaltered_description
   end
   
   def description_category
