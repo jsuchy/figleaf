@@ -12,4 +12,10 @@ describe CitySearch do
     
     CitySearch.find("").should == []
   end
+  
+  it "should return an empty array if there is an api error" do
+    WeatherMan.should_receive(:search).with("really long text").and_raise(WeatherMan::ApiError)
+    
+    CitySearch.find("really long text").should == []
+  end
 end
