@@ -9,7 +9,16 @@ class Weather
   wrap_weather_man_response "forecast.today.high", "high"
   wrap_weather_man_response "current_conditions.feels_like.to_i", "feels_like_in_farenheit"
   wrap_weather_man_response "current_conditions.wind.speed.to_i", "wind_speed"
+  wrap_weather_man_response "current_conditions.wind.direction", "wind_direction"
   wrap_weather_man_response "current_conditions.description", "description"
+  wrap_weather_man_response "current_conditions.uv.index.to_i", "uv_index"
+  wrap_weather_man_response "current_conditions.uv.description", "uv_description"
+  wrap_weather_man_response "current_conditions.humidity.to_i", "humidity"
+  wrap_weather_man_response "current_conditions.barometric_pressure.reading.to_f", "pressure"
+  wrap_weather_man_response "current_conditions.dew_point.to_i", "dew_point"
+  wrap_weather_man_response "current_conditions.visibility.to_f", "visibility"
+  wrap_weather_man_response "forecast.today.sunrise", "sunrise_time"
+  wrap_weather_man_response "forecast.today.sunset", "sunset_time"
   
   def initialize(weather_man_response)
     @weather_man_response = weather_man_response
