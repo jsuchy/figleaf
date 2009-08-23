@@ -1,6 +1,11 @@
+= render :partial => "shared/date"
+
+#character
+  = image_tag("burt_nude.png")
+
 What should I wear today?
 - form_tag "/search" do
-  = text_field_tag "location", 'Zip Code/ City, State'
+  = text_field_tag "location", 'Zip Code/ City, State', :onfocus => 'if(this.value==this.defaultValue)this.value="";', :onblur => 'if(this.value=="")this.value=this.defaultValue;'
   = submit_tag "search"
 
 = render :partial => 'home/errors' if flash[:errors]
