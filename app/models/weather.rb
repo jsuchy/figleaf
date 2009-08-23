@@ -1,4 +1,6 @@
 class Weather
+  attr_reader :weather_man_response
+
   def self.wrap_weather_man_response(old_name, new_name)
     class_eval "def #{new_name}; @weather_man_response.#{old_name}; end\n"
   end
@@ -7,7 +9,7 @@ class Weather
   wrap_weather_man_response "forecast.today.high", "high"
   wrap_weather_man_response "current_conditions.feels_like.to_i", "feels_like_in_farenheit"
   wrap_weather_man_response "current_conditions.wind.speed.to_i", "wind_speed"
-  wrap_weather_man_response "forecast.today.day.description", "description"
+  wrap_weather_man_response "current_conditions.description", "description"
   
   def initialize(weather_man_response)
     @weather_man_response = weather_man_response
@@ -36,6 +38,7 @@ class Weather
     return :sunny if description.match(/Fair/)
     return :sunny if description.match(/Clear/)
     return :cloudy if description.match(/Cloudy/)
+    return :cloudy if description.match(/Thunder/)
     return :snowy if description.match(/Snow/)
     return :rainy if description.match(/Showers/)
     return :rainy if description.match(/Storms/)

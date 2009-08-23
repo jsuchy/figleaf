@@ -21,12 +21,14 @@ describe SearchController do
   end
   
   it "should redirect to the weather controller if there is only one match" do
-    city = [mock("city")]
-    CitySearch.should_receive(:find).with("some location").and_return(city)
+    city = mock("city")
+    cities = [city]
+    city.should_receive(:id).and_return("location_id")
+    CitySearch.should_receive(:find).with("some location").and_return(cities)
   
     post :index, :location => "some location"
     
-    response.should redirect_to(:controller => :weather, :action => :display, :id => "some location")
+    response.should redirect_to(:controller => :weather, :action => :display, :id => "location_id")
     
   end
   

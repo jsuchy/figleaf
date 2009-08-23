@@ -6,7 +6,7 @@ class SearchController < ApplicationController
       flash[:errors] = "No Matching results were found."
       redirect_to(:controller => :home, :action => :index)
     elsif @cities.size == 1
-      redirect_to(:controller => :weather, :action => :display, :id => params[:location])
+      redirect_to(:controller => :weather, :action => :display, :id => @cities.first.id)
     elsif
       flash[:errors]= "We found more than one city!"
       render :template => 'home/index' 

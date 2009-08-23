@@ -159,14 +159,14 @@ a:hover
 #banner_head
 {
   background: url(/images/bg_banner_head.png) no-repeat 0 0;
-  width: 198px;
+  width: 278px;
   height: 56px;
   padding: 13px 38px 33px 16px;
   text-align: center;
   
   position: absolute;
   top: 72px;
-  left: 110px;
+  left: 45px;
 }
 
 #banner_neck
@@ -209,6 +209,7 @@ a:hover
 #banner_details table
 {
   border-collapse: collapse;
+  width: 100%;
 }
 
 #details_content
@@ -236,4 +237,11 @@ a:hover
   position: absolute;
   top: 76px;
   left: 344px;
+}
+
+#character img
+{
+  position: absolute;
+  top: 0;
+  left: 0;
 }

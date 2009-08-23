@@ -96,18 +96,16 @@ describe Weather do
   
   describe "description" do
     def description_should_map_to_category(description, category_symbol)
-      @day.stub!(:description).and_return(description)
+      @current_conditions.stub!(:description).and_return(description)
       @weather.description_category.should == category_symbol
     end
     
     before(:each) do
       @weather = Weather.new(@weather_man_response)
-      @day = mock(WeatherManForecastPart)
-      @today.stub!(:day).and_return(@day)
     end
     
     it "should return the description" do
-      @day.should_receive(:description).and_return("Mostly Cloudy")      
+      @current_conditions.should_receive(:description).and_return("Mostly Cloudy")      
       @weather.description.should == "Mostly Cloudy"
     end
     
@@ -125,6 +123,7 @@ describe Weather do
       description_should_map_to_category("Partly Cloudy", :cloudy)
       description_should_map_to_category("Mostly Cloudy", :cloudy)
       description_should_map_to_category("Cloudy Sometimes", :cloudy)
+      description_should_map_to_category("Thunder in the Vicinity", :cloudy)
     end
     
     it "should be rainy" do
