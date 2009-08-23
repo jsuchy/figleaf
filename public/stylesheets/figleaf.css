@@ -118,11 +118,18 @@ a:hover
 #footer p
 {
   float: left;
+  padding: 8px;
 }
 
-#footer .nav
+#footer .search
 {
   float: right;
+  padding: 8px;
+}
+
+#footer .search form
+{
+  display: inline;
 }
 
 #tagline

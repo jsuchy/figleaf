@@ -14,8 +14,9 @@
         = yield
     #footer_wrapper
       #footer
-        %p.nav
-          = render :partial => "search/form"
+        - unless @homepage
+          .search
+            = render :partial => "search/form"
 
         %p
           Copyright 2009.
