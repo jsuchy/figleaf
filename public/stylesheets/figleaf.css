@@ -159,14 +159,14 @@ a:hover
 #banner_head
 {
   background: url(/images/bg_banner_head.png) no-repeat 0 0;
-  width: 198px;
+  width: 278px;
   height: 56px;
   padding: 13px 38px 33px 16px;
   text-align: center;
   
   position: absolute;
   top: 72px;
-  left: 110px;
+  left: 45px;
 }
 
 #banner_neck

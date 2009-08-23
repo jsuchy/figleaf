@@ -42,7 +42,7 @@ describe WeatherHelper do
       garment_image_for(@weather, "foo").should == nil
     end
     
-    it "should choose a default garment image if none is specified" do
+    it "should choose a blank garment image if none is specified" do
       @weather.stub!(:feels_like_description).and_return(:key_that_has_no_garment)
       garment_image_for(@weather, "head").should == "blank.png"
     end

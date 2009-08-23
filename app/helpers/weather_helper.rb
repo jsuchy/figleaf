@@ -50,10 +50,10 @@ module WeatherHelper
                    :warm_breezy_snowy => "ascot", :warm_breezy_rainy => "scarf", :warm_windy_sunny => "ascot",
                    :warm_windy_cloudy => "ascot", :warm_windy_snowy => "scarf", :warm_windy_rainy => nil,
                    
-                   :hot_calm_sunny => "bare", :hot_calm_cloudy => "bare", :hot_calm_snowy => "bare",
-                   :hot_calm_rainy => "bare", :hot_breezy_sunny => "bare", :hot_breezy_cloudy => "bare",
-                   :hot_breezy_snowy => "ascot", :hot_breezy_rainy => "ascot", :hot_windy_sunny => "bare",
-                   :hot_windy_cloudy => "bare", :hot_windy_snowy => "scarf", :hot_windy_rainy => "scarf"}
+                   :hot_calm_sunny => nil, :hot_calm_cloudy => nil, :hot_calm_snowy => nil,
+                   :hot_calm_rainy => nil, :hot_breezy_sunny => nil, :hot_breezy_cloudy => nil,
+                   :hot_breezy_snowy => "ascot", :hot_breezy_rainy => "ascot", :hot_windy_sunny => nil,
+                   :hot_windy_cloudy => nil, :hot_windy_snowy => "scarf", :hot_windy_rainy => "scarf"}
     return neck_images[lookup_symbol(weather)]
   end
   

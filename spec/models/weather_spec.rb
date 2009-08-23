@@ -123,6 +123,7 @@ describe Weather do
       description_should_map_to_category("Partly Cloudy", :cloudy)
       description_should_map_to_category("Mostly Cloudy", :cloudy)
       description_should_map_to_category("Cloudy Sometimes", :cloudy)
+      description_should_map_to_category("Thunder in the Vicinity", :cloudy)
     end
     
     it "should be rainy" do
