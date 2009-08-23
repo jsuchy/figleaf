@@ -4,21 +4,21 @@
 
 #banner_head.banner
   %h2 
-    = @weather.description
+    = @weather.description 
   %p
-    = outfit.head.display_text
+    = "#{outfit.head.display_text}!"
 
 #banner_neck.banner
   %h2
     = "#{@weather.wind_speed} mph wind"
   %p
-    = outfit.neck.display_text
+    = "#{outfit.neck.display_text}!"
     
 #banner_body.banner
   %h2
     = "Feels like #{@weather.feels_like_in_farenheit}º F"
   %p
-    = outfit.body.display_text
+    = "#{outfit.body.display_text}!"
 
 .banner_details.weather
   .top
@@ -26,11 +26,11 @@
     .details_content
       %table
         %tr
-          %td UV Index:
-          %td.value= "#{@weather.uv_index} #{@weather.uv_description}"
+          %td Temperature:
+          %td.value= "#{@weather.temperature}º F"
         %tr
           %td Wind:
-          %td.value= "From #{@weather.wind_direction} at #{@weather.wind_speed} mph"
+          %td.value= "#{@weather.wind_direction} at #{@weather.wind_speed} mph"
         %tr
           %td Humidity:
           %td.value= "#{@weather.humidity}%"

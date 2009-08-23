@@ -28,6 +28,7 @@ EOS
   wrap_weather_man_response "current_conditions.visibility.to_f", "visibility"
   wrap_weather_man_response "forecast.today.sunrise", "sunrise_time"
   wrap_weather_man_response "forecast.today.sunset", "sunset_time"
+  wrap_weather_man_response "current_conditions.temperature.to_i", "temperature"
   
   def initialize(weather_man_response)
     @weather_man_response = weather_man_response
@@ -46,9 +47,9 @@ EOS
   end
   
   def wind_speed_description
-    return :calm if wind_speed <= 10 
-    return :breezy if (11..30).include?(wind_speed)
-    return :windy if wind_speed >= 31
+    return :calm if wind_speed <= 7 
+    return :breezy if (8..20).include?(wind_speed)
+    return :windy if wind_speed >= 21
   end
   
   def description_category

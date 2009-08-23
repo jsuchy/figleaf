@@ -33,7 +33,7 @@ describe Outfit do
     outfit.body.display_text.should == "Snow Suit"
     
     outfit.neck.garment.should == "amulet"
-    outfit.neck.display_text.should == "Amulet"
+    outfit.neck.display_text.should == "Ruby Amulet"
   end
   
   
