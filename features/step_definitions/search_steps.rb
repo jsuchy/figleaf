@@ -13,7 +13,7 @@ Then /^I should see the information for "([^\"]*)"$/ do |location_id|
   response.body.should include(weather.wind_speed.to_s)
   response.body.should include(weather.description.to_s)
   response.body.should include(weather.pressure.to_s)
-  response.body.should include(weather.uv_description.to_s)
+  response.body.should include(weather.temperature.to_s)
   response.body.should include(weather.sunrise_time.to_s)
 end
 
