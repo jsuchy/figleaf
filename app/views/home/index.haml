@@ -8,6 +8,9 @@
 
 - if flash[:errors] || @cities
   .banner_details.city_results
-    .details_content
-      = render :partial => 'home/errors' if flash[:errors]
-      = render :partial => "home/cities" if @cities
+    .top
+    .middle
+      .details_content
+        = render :partial => 'home/errors' if flash[:errors]
+        = render :partial => "home/cities" if @cities
+    .bottom
