@@ -113,7 +113,6 @@ describe Weather do
       description_should_map_to_category("Sunny", :sunny)
       description_should_map_to_category("Partly Sunny", :sunny)
       description_should_map_to_category("Sunny Maybe", :sunny)
-      description_should_map_to_category("Fair", :sunny)
       description_should_map_to_category("Mostly Clear", :sunny)
       description_should_map_to_category("Clear", :sunny)
     end
@@ -124,6 +123,7 @@ describe Weather do
       description_should_map_to_category("Mostly Cloudy", :cloudy)
       description_should_map_to_category("Cloudy Sometimes", :cloudy)
       description_should_map_to_category("Thunder in the Vicinity", :cloudy)
+      description_should_map_to_category("Fair", :cloudy)
     end
     
     it "should be rainy" do
@@ -139,8 +139,8 @@ describe Weather do
       description_should_map_to_category("Rain / Snow Showers", :snowy)
     end
     it "should default to sunny" do
-      description_should_map_to_category("Fog", :sunny)
-      description_should_map_to_category("Mist", :sunny)
+      description_should_map_to_category("Fog", :cloudy)
+      description_should_map_to_category("Mist", :cloudy)
     end
   end
 end

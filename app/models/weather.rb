@@ -35,14 +35,14 @@ class Weather
   
   def description_category
     return :sunny if description.match(/Sunny/)
-    return :sunny if description.match(/Fair/)
     return :sunny if description.match(/Clear/)
+    return :cloudy if description.match(/Fair/)
     return :cloudy if description.match(/Cloudy/)
     return :cloudy if description.match(/Thunder/)
     return :snowy if description.match(/Snow/)
     return :rainy if description.match(/Showers/)
     return :rainy if description.match(/Storms/)
     return :rainy if description.match(/Rain/)
-    return :sunny
+    return :cloudy
   end
 end
