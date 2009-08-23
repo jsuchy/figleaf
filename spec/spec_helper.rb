@@ -49,3 +49,28 @@ Spec::Runner.configure do |config|
   #
   # For more information take a look at Spec::Runner::Configuration and Spec::Runner
 end
+
+module ActionController
+  module Flash 
+    class FlashNow
+      def initialize(flash)
+        @flash = flash
+        @flash[:now_cache] = {}
+      end
+      
+      def []=(k, v)
+        @flash[k] = v
+        @flash.discard(k)
+        @flash[:now_cache][k] = v
+        v
+      end
+    end
+    
+    class FlashHash
+      def now_cache
+        self[:now_cache] || {}
+      end
+    end
+  end 
+end
+

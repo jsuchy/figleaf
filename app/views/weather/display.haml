@@ -7,6 +7,8 @@
 
 .clear
 
+= render :partial => "shared/date"
+
 #banner_head.banner
   %h2 
     = @weather.description
@@ -25,16 +27,19 @@
   %p
     = outfit.body.display_text
 
-#banner_details
-  #details_content
-    %table
-      %tr
-        %td Low:
-        %td.value= @weather.low
-      %tr
-        %td High:
-        %td.value= @weather.high
-        
+.banner_details
+  .top
+  .middle
+    .details_content
+      %table
+        %tr
+          %td Low:
+          %td.value= @weather.low
+        %tr
+          %td High:
+          %td.value= @weather.high
+  .bottom
+
 #character
   = image_tag("burt_nude.png")
   = image_tag("body_#{outfit.body.garment}.png")

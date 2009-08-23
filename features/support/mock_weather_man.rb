@@ -17,6 +17,10 @@ class WeatherManCurrentConditions
   def wind
     return WeatherManWind.new
   end
+  
+  def description
+    return ""
+  end
 end
 class WeatherManForecastDay
   def day
@@ -52,6 +56,7 @@ class WeatherMan
   end
   
   def self.search(search_criteria)
+    raise "WeatherMan Error 0: An unknown error has occurred." if search_criteria.blank?
     if search_criteria == "Chicago"
       return [WeatherMan.mock("USIL0225", "Chicago, IL"), WeatherMan.mock("USCA0210", "Chicago Park, CA")]
     elsif search_criteria == "London"

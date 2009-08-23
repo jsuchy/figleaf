@@ -23,7 +23,7 @@ module WeatherHelper
                    :chilly_breezy_snowy => "ushanka", :chilly_breezy_rainy => "rain_hat", :chilly_windy_sunny => "ear_muffs",
                    :chilly_windy_cloudy => "cowboy_hat", :chilly_windy_snowy => "ushanka", :chilly_windy_rainy => "dive_helmet",
                    
-                   :warm_calm_sunny => "sunglasses", :warm_calm_cloudy => "nra_hat", :warm_calm_snowy => "dive_helmet",
+                   :warm_calm_sunny => "sunglasses", :warm_calm_cloudy => "cowboy_hat", :warm_calm_snowy => "dive_helmet",
                    :warm_calm_rainy => "rain_hat", :warm_breezy_sunny => "sunglasses", :warm_breezy_cloudy => "cowboy_hat",
                    :warm_breezy_snowy => "cowboy_hat", :warm_breezy_rainy => "rain_hat", :warm_windy_sunny => "sunglasses",
                    :warm_windy_cloudy => "nra_hat", :warm_windy_snowy => "cowboy_hat", :warm_windy_rainy => "dive_helmet",

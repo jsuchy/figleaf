@@ -1,7 +1,28 @@
-What should I wear today?
-- form_tag "/search" do
-  = text_field_tag "location", 'Zip Code/ City, State'
-  = submit_tag "search"
+= render :partial => "shared/date"
 
-= render :partial => 'home/errors' if flash[:errors]
-= render :partial => "home/cities" if @cities
+#character
+  = image_tag("burt_nude.png")
+
+#figleaf_input
+  = render :partial => "search/form"
+
+.banner_details.city_results
+  .top
+  .middle
+    .details_content
+      = render :partial => 'home/errors' if flash[:errors]
+      = render :partial => "home/cities" if @cities
+      - if !flash[:errors] && !@cities
+        %p If you were Burt, what outfit would you be rocking today?
+  .bottom
+    
+.banner_details.sample_cities
+  .top
+  .middle
+    .details_content
+      %h3 Sample Cities
+      %ul
+        - { "Bangkok, Thailand" => "THXX0002", "Beijing, China" => "CHXX0008", "Cairo, Egypt" => "EGXX0004", "Lima, Peru" => "PEXX0011", "London, United Kingdom" => "UKXX0085", "New York, NY" => "USNY0996", "Paris, France" => "FRXX0076", "Sydney, Australia" => "ASXX0112", "Tokyo, Japan" => "JAXX0085", "Vancouver, Canada" => "CAXX0518", }.sort.each do |city, code|
+          %li
+            = link_to city, :controller => "weather", :action => "display", :id => code
+  .bottom
