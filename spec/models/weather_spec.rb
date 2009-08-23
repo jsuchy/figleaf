@@ -192,8 +192,13 @@ describe Weather do
     end
     
     it "should return the description" do
-      @current_conditions.should_receive(:description).and_return("Mostly Cloudy")      
+      @current_conditions.should_receive(:description).at_least(1).times.and_return("Mostly Cloudy")      
       @weather.description.should == "Mostly Cloudy"
+    end
+    
+    it "should return who knows if the description is N/A" do
+      @current_conditions.should_receive(:description).and_return("N/A")      
+      @weather.description.should == "Who Knows!"
     end
     
     it "should be sunny" do
