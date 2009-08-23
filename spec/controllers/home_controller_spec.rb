@@ -6,5 +6,12 @@ describe HomeController do
     
     assigns[:homepage].should == true
   end
+  
+  it "should have 10 sample cities" do
+    get :index
+    
+    assigns[:sample_cities].should_not be_nil
+    assigns[:sample_cities].size.should == 10
+  end
 
 end

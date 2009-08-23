@@ -9,6 +9,7 @@ class SearchController < ApplicationController
       redirect_to(:controller => :weather, :action => :display, :id => @cities.first.id)
     elsif
       flash.now[:errors]= "We found more than one city!"
+      @homepage = true
       render :template => 'home/index'
     end
   end
