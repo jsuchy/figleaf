@@ -69,6 +69,14 @@ describe Weather do
         weather = Weather.new(@weather_man_response)
         weather.feels_like_in_farenheit.should == 70
       end
+      
+      it "should tell us the temperature" do
+        @weather_man_response.should_receive(:current_conditions).and_return(@current_conditions)
+        @current_conditions.should_receive(:temperature).and_return(70)
+
+        weather = Weather.new(@weather_man_response)
+        weather.temperature.should == 70
+      end
 
       it "should calculate the temperature scale" do
         temperature_should_feel_like("32", :cold)

@@ -28,6 +28,7 @@ EOS
   wrap_weather_man_response "current_conditions.visibility.to_f", "visibility"
   wrap_weather_man_response "forecast.today.sunrise", "sunrise_time"
   wrap_weather_man_response "forecast.today.sunset", "sunset_time"
+  wrap_weather_man_response "current_conditions.temperature.to_i", "temperature"
   
   def initialize(weather_man_response)
     @weather_man_response = weather_man_response
