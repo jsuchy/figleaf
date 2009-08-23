@@ -16,7 +16,7 @@
     
 #banner_body.banner
   %h2
-    = "Feels like #{@weather.feels_like_in_farenheit}º F"
+    = "Feels like #{@weather.feels_like_in_farenheit}ºF"
   %p
     = outfit.body.display_text
 
@@ -27,7 +27,7 @@
       %table
         %tr
           %td Temperature:
-          %td.value= "#{@weather.temperature}º F/#{to_celcius(@weather)}º C"
+          %td.value= "#{@weather.temperature}ºF / #{to_celcius(@weather)}ºC"
         %tr
           %td Wind:
           %td.value= "#{@weather.wind_direction} at #{@weather.wind_speed} mph"

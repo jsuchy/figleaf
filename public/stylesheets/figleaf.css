@@ -42,6 +42,7 @@ ul
 {
   padding-left: 20px;
 }
+
 li
 {
   padding-bottom: 3px;
@@ -282,6 +283,11 @@ a:hover
   bottom: 10px;
 }
 
+.banner_details.weather .middle
+{
+  padding: 0 15px;
+}
+
 .banner_details .top
 {
   background: url(/images/bg_banner_details_top.png) no-repeat 0 0;
@@ -317,7 +323,7 @@ a:hover
 {
   width: 50%;
   text-align: right;
-  padding: 5px 15px 5px 0;
+  padding: 5px 10px 5px 0;
   border-bottom: 1px solid #AAA;
 }
 
