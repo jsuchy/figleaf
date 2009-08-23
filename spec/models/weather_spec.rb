@@ -165,10 +165,10 @@ describe Weather do
     
     describe "scales" do
       it "should calculate the wind scale" do
-        wind_speed_should_map_to_description("10", :calm)
-        wind_speed_should_map_to_description("11", :breezy)
-        wind_speed_should_map_to_description("30", :breezy)
-        wind_speed_should_map_to_description("31", :windy)
+        wind_speed_should_map_to_description("7", :calm)
+        wind_speed_should_map_to_description("8", :breezy)
+        wind_speed_should_map_to_description("20", :breezy)
+        wind_speed_should_map_to_description("21", :windy)
       end
     end
   end
