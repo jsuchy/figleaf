@@ -4,6 +4,11 @@
   margin: 0;
 }
 
+#ie_message
+{
+  display: none;
+}
+
 html
 {
   background: #7ACCFF;
@@ -168,6 +173,8 @@ a:hover
   text-align: center;
   margin: 0 auto;
   float: none;
+  display: inline;
+  display: inline-block;
 }
 
 #banner_date .left, #banner_date .center, #banner_date .right

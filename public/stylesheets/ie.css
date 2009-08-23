@@ -1,0 +1,14 @@
+#header_wrapper, #content_wrapper, #footer_wrapper
+{
+  display: none;
+}
+
+#ie_message
+{
+  display: block;
+  width: 50%;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #333333;
+  background: #FFFFFF;
+}

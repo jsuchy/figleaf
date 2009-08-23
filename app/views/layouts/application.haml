@@ -4,6 +4,8 @@
   %head
     %title figleaf: What Would Burt Reynolds Wear?
     = stylesheet_link_tag "figleaf"
+    /[if lte IE6]
+      = stylesheet_link_tag "ie"
   %body
     #header_wrapper
       #header
@@ -27,4 +29,10 @@
           = link_to "@paulwpagel", "http://www.twitter.com/paulwpagel"
           ,
           = link_to "@trptcolin", "http://www.twitter.com/trptcolin"
+    #ie_message
+      You can find find out what Burt Reynolds would wear today by using a modern browser such as:
+      %ul
+        %li= link_to "Internet Explorer 8", "http://www.microsoft.com/windows/internet-explorer"
+        %li= link_to "Mozilla Firefox", "http://www.mozilla.com"
+        %li= link_to "Safari", "http://www.apple.com/safari"
         
