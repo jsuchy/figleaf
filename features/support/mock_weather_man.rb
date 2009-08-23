@@ -4,18 +4,55 @@ class WeatherManForecastPart < OpenStruct
   end
 end
 
+class WeatherManUV
+  def index
+    return "555"
+  end
+  def description
+    return "Low"
+  end
+end
+
 class WeatherManWind < OpenStruct
   def initialize
   end
   def speed
-    return 12345
+    return "12345"
+  end
+  def direction
+    return "NNW"
+  end
+end
+class WeatherManBarometer
+  def reading
+    return "29.45"
   end
 end
 class WeatherManCurrentConditions
-  attr_accessor :feels_like
-  
   def wind
     return WeatherManWind.new
+  end
+  
+  def feels_like
+    return "123"
+  end
+  def description
+    return "Mist"
+  end
+  def uv
+    return WeatherManUV.new
+  end
+  def humidity
+    return "85"
+  end
+  def barometric_pressure
+    return WeatherManBarometer.new
+  end
+  def dew_point
+    return "678"
+  end
+  def visibility
+    return "6.2"
   end
 end
 class WeatherManForecastDay
@@ -27,6 +64,12 @@ class WeatherManForecastDay
   end
   def high
     return "high temperature"
+  end
+  def sunrise
+    return "6:17 AM"
+  end
+  def sunset
+    return "8:46 PM"
   end
 end
 class WeatherManForecast < Array
@@ -52,12 +95,15 @@ class WeatherMan
   end
   
   def self.search(search_criteria)
+    raise "WeatherMan Error 0: An unknown error has occurred." if search_criteria.blank?
     if search_criteria == "Chicago"
       return [WeatherMan.mock("USIL0225", "Chicago, IL"), WeatherMan.mock("USCA0210", "Chicago Park, CA")]
     elsif search_criteria == "London"
       return [WeatherMan.mock("UKXX0085", "London, United Kingdom"), WeatherMan.mock("CAXX0255", "London, Canada")]
     elsif search_criteria == "60048"
       return [WeatherMan.mock("60048", "Libertyville, IL (60048)")]
+    elsif search_criteria == "badlocation"
+      return [WeatherMan.mock("badlocation", "badlocation")]
     else
       return []
     end

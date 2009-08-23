@@ -6,4 +6,10 @@ describe CitySearch do
     WeatherMan.should_receive(:search).with('London').and_return(locations)
     CitySearch.find('London').should == locations
   end
+  
+  it "should not call find if the location is blank" do
+    WeatherMan.should_not_receive(:search)
+    
+    CitySearch.find("").should == []
+  end
 end

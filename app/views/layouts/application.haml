@@ -7,15 +7,16 @@
   %body
     #header_wrapper
       #header
-        = link_to(image_tag("logo.png"), "/")
+        = link_to(image_tag("logo.png"), "/", :id => :header)
         = image_tag("wwbrw.png", :id => "tagline")
     #content_wrapper
       #content
         = yield
     #footer_wrapper
       #footer
-        %p.nav
-          = link_to "Change Location", "/"
+        - unless @homepage
+          .search
+            = render :partial => "search/form"
 
         %p
           Copyright 2009.
