@@ -4,9 +4,7 @@
   = image_tag("burt_nude.png")
 
 #figleaf_input
-  - form_tag "/search" do
-    = text_field_tag "location", 'Zip Code/ City, State', :onfocus => 'if(this.value==this.defaultValue)this.value="";', :onblur => 'if(this.value=="")this.value=this.defaultValue;'
-    = submit_tag "search"
+  = render :partial => "search/form"
 
 - if flash[:errors] || @cities
   .banner_details.city_results
