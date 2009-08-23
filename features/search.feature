@@ -26,4 +26,4 @@ Feature: Search
     And I press "search"
     Then I should be on the homepage
     And I should see an error message
-    
+  
