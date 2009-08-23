@@ -1,7 +1,4 @@
 What should I wear today?
-- form_tag "/search" do
-  = text_field_tag "location", 'Zip Code/ City, State'
-  = submit_tag "search"
-
+= render :partial => "search/form"
 = render :partial => 'home/errors' if flash[:errors]
 = render :partial => "home/cities" if @cities

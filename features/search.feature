@@ -27,3 +27,23 @@ Feature: Search
     Then I should be on the homepage
     And I should see an error message
   
+  Scenario: second search
+    Given I am on the homepage
+    When I fill in "location" with "60048"
+    And I press "search"
+    Then I should be on the display weather page for "60048"
+    When I fill in "location" with "London"
+    And I press "search"
+    Then I should see the cities for "London"
+    
+  Scenario: Empty search criteria
+    Given I am on the homepage
+    When I fill in "location" with ""
+    And I press "search"
+    Then I should be on the homepage
+    And I should see an error message
+  
+  
+  
+  
+  
