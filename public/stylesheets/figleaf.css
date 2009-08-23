@@ -11,6 +11,11 @@ html
   font-family: "Lucida Grande", Arial, sans-serif;
 }
 
+h1, h2, h3, h4, h5, h6
+{
+  padding-bottom: 3px;
+}
+
 h1
 {
   font-size: 24px;
@@ -26,6 +31,15 @@ h2
 img
 {
   border: none;
+}
+
+ul
+{
+  padding-left: 20px;
+}
+li
+{
+  padding-bottom: 3px;
 }
 
 a
@@ -77,7 +91,6 @@ a:hover
 
 #content_wrapper
 {
-  height: 453px;
   background: #83A686;
   border-top: 8px solid #AA0000;
   border-bottom: 8px solid #AA0000;
@@ -87,6 +100,8 @@ a:hover
 {
   padding-top: 0;
   padding-bottom: 0;
+  min-height: 453px;
+  
   height: 100%;
   background: #FFFFFF;
   border-left: 1px solid #000000;
@@ -197,9 +212,7 @@ a:hover
 
 .banner_details
 {
-  background: url(/images/bg_banner_details.png) no-repeat 0 0;
-  width: 199px;
-  height: 191px;
+  width: 229px;
   padding: 15px;
   
   position: absolute;
@@ -209,14 +222,33 @@ a:hover
 
 .banner_details.city_results
 {
-  left: 15px;
-  top: 100px;
+  left: 0;
+  top: 50px;
+}
+
+.banner_details .top
+{
+  background: url(/images/bg_banner_details_top.png) no-repeat 0 0;
+  height: 20px; 
+}
+
+.banner_details .middle
+{
+  background: url(/images/bg_banner_details_middle.png) repeat-y 0 0;
+  padding: 0 15px;
+}
+
+.banner_details .bottom
+{
+  background: url(/images/bg_banner_details_bottom.png) no-repeat 0 0;
+  height: 35px;
 }
 
 .banner_details table
 {
   border-collapse: collapse;
-  width: 100%;
+  padding: 0 15px;
+  width: 199px;
 }
 
 .details_content

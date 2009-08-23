@@ -19,15 +19,18 @@
     = "#{body_garment_for(@weather)}!"
 
 .banner_details
-  .details_content
-    %table
-      %tr
-        %td Low:
-        %td.value= @weather.low
-      %tr
-        %td High:
-        %td.value= @weather.high
-        
+  .top
+  .middle
+    .details_content
+      %table
+        %tr
+          %td Low:
+          %td.value= @weather.low
+        %tr
+          %td High:
+          %td.value= @weather.high
+  .bottom
+
 #character
   = image_tag("burt_nude.png")
   = image_tag(garment_image_for(@weather, "body"))
