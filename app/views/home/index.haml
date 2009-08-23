@@ -3,10 +3,13 @@
 #character
   = image_tag("burt_nude.png")
 
-What should I wear today?
-- form_tag "/search" do
-  = text_field_tag "location", 'Zip Code/ City, State', :onfocus => 'if(this.value==this.defaultValue)this.value="";', :onblur => 'if(this.value=="")this.value=this.defaultValue;'
-  = submit_tag "search"
+#figleaf_input
+  - form_tag "/search" do
+    = text_field_tag "location", 'Zip Code/ City, State', :onfocus => 'if(this.value==this.defaultValue)this.value="";', :onblur => 'if(this.value=="")this.value=this.defaultValue;'
+    = submit_tag "search"
 
-= render :partial => 'home/errors' if flash[:errors]
-= render :partial => "home/cities" if @cities
+- if flash[:errors] || @cities
+  .banner_details.city_results
+    .details_content
+      = render :partial => 'home/errors' if flash[:errors]
+      = render :partial => "home/cities" if @cities
