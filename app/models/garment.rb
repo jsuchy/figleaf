@@ -7,7 +7,7 @@ class Garment
   end
 
   ESKIMO_HAT = new("eskimo_hat", "Eskimo Hat") unless defined?(ESKIMO_HAT)
-  AMULET = new("amulet", "Amulet") unless defined?(AMULET) 
+  AMULET = new("amulet", "Ruby Amulet") unless defined?(AMULET) 
   SNOW_SUIT = new("snowsuit", "Snow Suit") unless defined?(SNOW_SUIT)
   USHANKA = new("ushanka", "Avoid red ears") unless defined?(USHANKA)
   SCARF = new("scarf", "Scarf") unless defined?(SCARF)
@@ -26,6 +26,6 @@ class Garment
   ASCOT = new("ascot", "Polkadot Ascot") unless defined?(ASCOT)
   SPEEDO = new("speedo", "Speedo") unless defined?(SPEEDO)
   COKE = new("coke_glasses", "Shades") unless defined?(COKE)
-  LOIN = new("loincloth", "Loin Cloth") unless defined?(LOIN)
+  LOIN = new("loincloth", "Dainty Loin Cloth") unless defined?(LOIN)
   SOMBRERO = new("sombrero", "Sombrero") unless defined?(SOMBRERO)
 end

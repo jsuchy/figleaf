@@ -97,12 +97,12 @@ class Outfit
   outfit_for :hot, :calm, :rainy,       {:head => Garment::RAIN_HAT, :neck => Garment::AMULET, :body =>  Garment::LOIN}
                                         
   outfit_for :hot, :breezy, :sunny,     {:head => Garment::SOMBRERO, :neck => Garment::AMULET, :body =>  Garment::SPEEDO}
-  outfit_for :hot, :breezy, :cloudy,    {:head => Garment::NRA, :neck => Garment::AMULET, :body =>  Garment::LOIN}
+  outfit_for :hot, :breezy, :cloudy,    {:head => Garment::COKE, :neck => Garment::AMULET, :body =>  Garment::SPEEDO}
   outfit_for :hot, :breezy, :snowy,     {:head => Garment::EAR_MUFFS, :neck => Garment::ASCOT, :body =>  Garment::SPEEDO}
   outfit_for :hot, :breezy, :rainy,     {:head => Garment::RAIN_HAT, :neck => Garment::ASCOT, :body =>  Garment::LOIN}
               
   outfit_for :hot, :windy, :sunny,      {:head => Garment::SUNGLASSES, :neck => Garment::AMULET, :body =>  Garment::SPEEDO}
-  outfit_for :hot, :windy, :cloudy,     {:head => Garment::NRA, :neck => Garment::AMULET, :body =>  Garment::SPEEDO}
+  outfit_for :hot, :windy, :cloudy,     {:head => Garment::SUNGLASSES, :neck => Garment::AMULET, :body =>  Garment::SPEEDO}
   outfit_for :hot, :windy, :snowy,      {:head => Garment::EAR_MUFFS, :neck => Garment::SCARF, :body =>  Garment::SPEEDO}
   outfit_for :hot, :windy, :rainy,      {:head => Garment::RAIN_HAT, :neck => Garment::SCARF, :body =>  Garment::LOIN}
   
