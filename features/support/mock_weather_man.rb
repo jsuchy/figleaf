@@ -17,6 +17,10 @@ class WeatherManCurrentConditions
   def wind
     return WeatherManWind.new
   end
+  
+  def description
+    return ""
+  end
 end
 class WeatherManForecastDay
   def day
