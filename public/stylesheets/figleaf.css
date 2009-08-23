@@ -94,6 +94,8 @@ a:hover
   background: #83A686;
   border-top: 8px solid #AA0000;
   border-bottom: 8px solid #AA0000;
+  position: relative;
+  z-index: 2;
 }
 
 #content
@@ -103,7 +105,7 @@ a:hover
   min-height: 453px;
   
   height: 100%;
-  background: #FFFFFF;
+  background: #FFFFFF url(/images/bg_canvas_white.jpg) repeat 0 0;
   border-left: 1px solid #000000;
   border-right: 1px solid #000000;
 }
@@ -114,6 +116,8 @@ a:hover
   background: url(/images/bg_footer.gif) repeat-x 0 0;
   border-top: 1px solid #000000;
   font-size: 0.9em;
+  position: relative;
+  z-index: 1;
 }
 #footer p
 {
@@ -177,7 +181,6 @@ a:hover
   font-size: 12px;
 }
 
-
 #banner_head
 {
   background: url(/images/bg_banner_head.png) no-repeat 0 0;
@@ -224,19 +227,27 @@ a:hover
   
   position: absolute;
   bottom: 0;
-  right: 72px;
+  right: 40px;
 }
 
 .banner_details.city_results
 {
-  left: 0;
-  top: 50px;
+  position: relative;
+  top: -25px;
+  left: -15px;
 }
 
 .banner_details.sample_cities
 {
   right: 0;
   top: 50px;
+  z-index: 2;
+}
+
+.banner_details.weather
+{
+  height: 250px;
+  bottom: 0;
 }
 
 .banner_details .top
@@ -262,6 +273,7 @@ a:hover
   border-collapse: collapse;
   padding: 0 15px;
   width: 199px;
+  font-size: 0.85em;
 }
 
 .details_content
@@ -308,5 +320,9 @@ a:hover
   position: absolute;
   top: 260px;
   text-align: center;
+}
 
+#figleaf_input input
+{
+  font-size: 16px;
 }

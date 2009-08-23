@@ -2,7 +2,16 @@ class Weather
   attr_reader :weather_man_response
   
   def self.wrap_weather_man_response(old_name, new_name)
-    class_eval "def #{new_name}; @weather_man_response.#{old_name}; end\n"
+    method = <<EOS
+def #{new_name}
+  begin
+    @weather_man_response.#{old_name}
+  rescue
+    return nil
+  end
+end
+EOS
+    class_eval method
   end
   
   wrap_weather_man_response "forecast.today.low", "low"
@@ -50,9 +59,16 @@ class Weather
     return :cloudy if description.match(/Thunder/)
     return :snowy if description.match(/Snow/)
     return :rainy if description.match(/Showers/)
-    return :rainy if description.match(/Storms/)
+    return :rainy if description.match(/Storm/)
     return :rainy if description.match(/Rain/)
     return :cloudy
+  end
+  
+  def valid?
+    return false if @weather_man_response.nil?
+    return false if @weather_man_response.current_conditions.nil?
+    return false if @weather_man_response.forecast.nil?
+    return true
   end
   
   alias :temp :feels_like_description

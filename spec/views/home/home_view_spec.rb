@@ -20,7 +20,21 @@ describe "home view spec" do
     
     response.body.should include("London #{value}")
     response.body.should include("Chicago")
-    response.body.should have_tag("a[href=/weather/display/#{value}L]")
+    response.body.should have_tag("a[href=/weather/display/#{value}L?city_name=London+#{value}]")
+  end
+  
+  it "should pass the city names in the link" do
+    # <a href="/blah?id=IAIAIA">Name</a>
+    value = rand 1000
+    assigns[:cities] = [mock("weather man 1", :name => "London #{value}", :id => "#{value}L"), 
+                        mock("weather man 2", :name => "Chicago", :id => "#{value}C")
+                        ]
+    
+    render :template => "home/index"
+    
+    response.body.should include("London #{value}")
+    response.body.should include("Chicago")
+    response.body.should have_tag("a[href=/weather/display/#{value}L?city_name=London+#{value}]")
   end
   
   it "should show an error div" do

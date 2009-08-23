@@ -1,4 +1,4 @@
 %ul
   - @cities.each do |city|
     %li
-      =link_to city.name, :controller => 'weather', :action => 'display', :id => city.id
+      =link_to city.name, :controller => 'weather', :action => 'display', :id => city.id, :city_name => city.name

@@ -20,17 +20,32 @@
   %p
     = "#{outfit.body.display_text}!"
 
-.banner_details
+.banner_details.weather
   .top
   .middle
     .details_content
       %table
         %tr
-          %td Low:
-          %td.value= @weather.low
+          %td UV Index:
+          %td.value= "#{@weather.uv_index} #{@weather.uv_description}"
         %tr
-          %td High:
-          %td.value= @weather.high
+          %td Wind:
+          %td.value= "From #{@weather.wind_direction} at #{@weather.wind_speed} mph"
+        %tr
+          %td Humidity:
+          %td.value= "#{@weather.humidity}%"
+        %tr
+          %td Pressure:
+          %td.value= "#{@weather.pressure} in."
+        %tr
+          %td Dew Point:
+          %td.value= "#{@weather.dew_point}°F"
+        %tr
+          %td Sunrise time:
+          %td.value= @weather.sunrise_time
+        %tr
+          %td Sunset time:
+          %td.value= @weather.sunset_time
   .bottom
 
 #character

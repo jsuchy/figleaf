@@ -9,9 +9,12 @@ end
 Then /^I should see the information for "([^\"]*)"$/ do |location_id|
   weather_man_response = WeatherMan.new(location_id).fetch
   weather = Weather.new(weather_man_response)
-  response.body.should include weather.low
-  response.body.should include weather.high
-  response.body.should include weather.wind_speed
+  response.body.should include(weather.feels_like_in_farenheit.to_s)
+  response.body.should include(weather.wind_speed.to_s)
+  response.body.should include(weather.description.to_s)
+  response.body.should include(weather.pressure.to_s)
+  response.body.should include(weather.uv_description.to_s)
+  response.body.should include(weather.sunrise_time.to_s)
 end
 
 Then /^I should see an error message$/ do
@@ -21,3 +24,13 @@ end
 Then /^I should not see an error message$/ do
   response.should_not have_tag("div[class=error_message]")
 end
+
+Given /^a search for "([^\"]*)" returns no results$/ do |arg1|
+  #TODO - EWM this is bad!  Clean me up!
+  class Weather
+    def valid?
+      false
+    end
+  end
+end
+
