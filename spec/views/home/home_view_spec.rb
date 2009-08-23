@@ -5,7 +5,7 @@ describe "home view spec" do
     render :template => "home/index"
     
     response.should have_tag("form[action=/search]")
-    response.should have_tag("input[type=text][name=location][value=Zip Code/ City, State]")
+    response.should have_tag("input[type=text][name=location][value=City, State / Zip Code]")
     response.should have_tag("input[type=submit][value=search]")
   end
   
