@@ -195,7 +195,7 @@ a:hover
   bottom: 67px;
 }
 
-#banner_details
+.banner_details
 {
   background: url(/images/bg_banner_details.png) no-repeat 0 0;
   width: 199px;
@@ -206,19 +206,26 @@ a:hover
   bottom: 0;
   right: 72px;
 }
-#banner_details table
+
+.banner_details.city_results
+{
+  left: 15px;
+  top: 100px;
+}
+
+.banner_details table
 {
   border-collapse: collapse;
   width: 100%;
 }
 
-#details_content
+.details_content
 {
   height: 100%;
   overflow: auto;
 }
 
-#details_content td
+.details_content td
 {
   width: 50%;
   text-align: right;
@@ -226,7 +233,7 @@ a:hover
   border-bottom: 1px solid #AAA;
 }
 
-#details_content td.value
+.details_content td.value
 {
   text-align: left;
   padding: 0;
@@ -244,4 +251,17 @@ a:hover
   position: absolute;
   top: 0;
   left: 0;
+}
+
+#figleaf_input
+{
+  border: 1px solid #AAAAAA;
+  background: #666;
+  padding: 15px;
+  margin: 0 250px;
+  width: 320px;
+  position: absolute;
+  top: 260px;
+  text-align: center;
+
 }

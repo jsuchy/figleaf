@@ -1,4 +1,13 @@
-What should I wear today?
-= render :partial => "search/form"
-= render :partial => 'home/errors' if flash[:errors]
-= render :partial => "home/cities" if @cities
+= render :partial => "shared/date"
+
+#character
+  = image_tag("burt_nude.png")
+
+#figleaf_input
+  = render :partial => "search/form"
+
+- if flash[:errors] || @cities
+  .banner_details.city_results
+    .details_content
+      = render :partial => 'home/errors' if flash[:errors]
+      = render :partial => "home/cities" if @cities
