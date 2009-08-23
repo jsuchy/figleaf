@@ -30,7 +30,7 @@ describe "weather view spec" do
     @weather.stub!(:wind_speed).and_return(2)
     @weather.stub!(:wind_direction).and_return("NNW")
     
-    should_render_and_include("From NNW at 2 mph")
+    should_render_and_include("NNW at 2 mph")
   end
   
   it "should display the air humidity" do
