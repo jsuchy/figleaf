@@ -26,11 +26,11 @@
     .details_content
       %table
         %tr
-          %td UV Index:
-          %td.value= "#{@weather.uv_index} #{@weather.uv_description}"
+          %td Temperature:
+          %td.value= "#{@weather.temperature}º F"
         %tr
           %td Wind:
-          %td.value= "From #{@weather.wind_direction} at #{@weather.wind_speed} mph"
+          %td.value= "#{@weather.wind_direction} at #{@weather.wind_speed} mph"
         %tr
           %td Humidity:
           %td.value= "#{@weather.humidity}%"

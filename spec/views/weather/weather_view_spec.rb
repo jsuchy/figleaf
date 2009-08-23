@@ -19,18 +19,17 @@ describe "weather view spec" do
     should_render_and_include("some description")
   end
   
-  it "should display the UV Index" do
-    @weather.stub!(:uv_index).and_return(5)
-    @weather.stub!(:uv_description).and_return("Moderate")
+  it "should display the real temperature" do
+    @weather.stub!(:temperature).and_return(70)
     
-    should_render_and_include("5 Moderate")
+    should_render_and_include("70º F")
   end
   
   it "should display the wind information" do
     @weather.stub!(:wind_speed).and_return(2)
     @weather.stub!(:wind_direction).and_return("NNW")
     
-    should_render_and_include("From NNW at 2 mph")
+    should_render_and_include("NNW at 2 mph")
   end
   
   it "should display the air humidity" do

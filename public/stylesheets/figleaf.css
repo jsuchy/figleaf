@@ -143,13 +143,6 @@ a:hover
   right: 15px;
 }
 
-#date_wrapper
-{
-  width: 750px;
-  margin: 0 auto;
-  padding: 5px 0;
-}
-
 #arrow_left
 {
   float: left;
@@ -161,14 +154,46 @@ a:hover
   float: right;
 }
 
+#date_wrapper
+{
+  margin: 0 auto;
+  padding: 5px 0;
+  text-align: center;
+}
+
 #banner_date
 {
-  background: url(/images/bg_banner_date.png) no-repeat 0 0;
   height: 36px;
-  width: 333px;
-  padding: 15px 10px;
+  padding: 0 10px 15px 0;
   text-align: center;
   margin: 0 auto;
+  float: none;
+}
+
+#banner_date .left, #banner_date .center, #banner_date .right
+{
+  float: left;
+}
+
+#banner_date .left
+{
+  background: url(/images/bg_banner_date_left.png) no-repeat 0 0;
+  width: 20px;
+  height: 67px;
+}
+
+#banner_date .center
+{
+  background: url(/images/bg_banner_date_center.png) repeat-x 0 0;
+  height: 45px;
+  padding: 17px 5px 5px 5px;
+}
+
+#banner_date .right
+{
+  background: url(/images/bg_banner_date_right.png) no-repeat 0 0;
+  width: 20px;
+  height: 67px;
 }
 
 .banner h2
@@ -233,7 +258,7 @@ a:hover
 .banner_details.city_results
 {
   position: relative;
-  top: -25px;
+  padding-top: 0;
   left: -15px;
 }
 
@@ -246,8 +271,8 @@ a:hover
 
 .banner_details.weather
 {
-  height: 250px;
-  bottom: 0;
+  height: auto;
+  bottom: 10px;
 }
 
 .banner_details .top
@@ -259,7 +284,7 @@ a:hover
 .banner_details .middle
 {
   background: url(/images/bg_banner_details_middle.png) repeat-y 0 0;
-  padding: 0 15px;
+  padding: 0 25px;
 }
 
 .banner_details .bottom
@@ -271,14 +296,13 @@ a:hover
 .banner_details table
 {
   border-collapse: collapse;
-  padding: 0 15px;
-  width: 199px;
+  padding: 0 10px;
+  width: 179px;
   font-size: 0.85em;
 }
 
 .details_content
 {
-  height: 100%;
   overflow: auto;
 }
 
@@ -322,7 +346,7 @@ a:hover
   text-align: center;
 }
 
-#figleaf_input input
+.search input
 {
   font-size: 16px;
 }
