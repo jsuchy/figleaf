@@ -6,8 +6,7 @@ class SearchController < ApplicationController
       flash[:errors] = "No Matching results were found."
       redirect_to(:controller => :home, :action => :index)
     elsif @cities.size == 1
-      #TODO - EWM - pass in city name for Colin
-      redirect_to(:controller => :weather, :action => :display, :id => @cities.first.id)
+      redirect_to(:controller => :weather, :action => :display, :id => @cities.first.id, :city_name => @cities.first.name)
     elsif
       flash.now[:errors]= "We found more than one city!"
       @homepage = true

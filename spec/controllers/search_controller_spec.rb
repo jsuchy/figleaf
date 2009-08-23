@@ -25,11 +25,12 @@ describe SearchController do
     city = mock("city")
     cities = [city]
     city.should_receive(:id).and_return("location_id")
+    city.should_receive(:name).and_return("some location")
     CitySearch.should_receive(:find).with("some location").and_return(cities)
   
     post :index, :location => "some location"
     
-    response.should redirect_to(:controller => :weather, :action => :display, :id => "location_id")
+    response.should redirect_to(:controller => :weather, :action => :display, :id => "location_id", :city_name => 'some location')
   end
   
   it "should redirect to the home controller if there is no match" do
