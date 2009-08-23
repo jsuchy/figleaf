@@ -18,7 +18,7 @@ class Garment
   EAR_MUFFS = new("earmuffs", "Chilly willy!") unless defined?(EAR_MUFFS)
   COWBOY_HAT = new("cowboy_hat", "Stick 'em up!") unless defined?(COWBOY_HAT)
   BOMBER = new("bomber_jacket", "I look good in leather!") unless defined?(BOMBER)
-  CHAPS = new("chaps", "Mount up!") unless defined?(CHAPS)
+  CHAPS = new("chaps", "Yee Haw!") unless defined?(CHAPS)
   RAIN_HAT = new("rain_hat", "Guess who I did last summer!") unless defined?(RAIN_HAT)
   SUNGLASSES = new("sunglasses", "Danger zone!") unless defined?(SUNGLASSES)
   SEER_SUCKER = new("seersucker", "Mint Julep anyone?") unless defined?(SEER_SUCKER)
