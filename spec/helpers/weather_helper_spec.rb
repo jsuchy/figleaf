@@ -20,7 +20,7 @@ describe WeatherHelper do
     end
     
     it "should give me the body image name for cold calm and sunny" do
-      body_garment_for(@weather).should == "snow_suit"
+      body_garment_for(@weather).should == "fur_coat"
     end
     
     it "should convert the head image name to an image file name" do
