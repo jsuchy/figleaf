@@ -246,10 +246,9 @@ a:hover
 
 .banner_details.weather
 {
-  height: 300px;
-  bottom: -10px;
+  height: 250px;
+  bottom: 0;
 }
-
 
 .banner_details .top
 {
@@ -321,5 +320,9 @@ a:hover
   position: absolute;
   top: 260px;
   text-align: center;
+}
 
+#figleaf_input input
+{
+  font-size: 16px;
 }
