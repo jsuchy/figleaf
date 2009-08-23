@@ -46,9 +46,9 @@ EOS
   end
   
   def wind_speed_description
-    return :calm if wind_speed <= 10 
-    return :breezy if (11..30).include?(wind_speed)
-    return :windy if wind_speed >= 31
+    return :calm if wind_speed <= 7 
+    return :breezy if (8..20).include?(wind_speed)
+    return :windy if wind_speed >= 21
   end
   
   def description_category
