@@ -43,5 +43,6 @@ class Weather
     return :rainy if description.match(/Showers/)
     return :rainy if description.match(/Storms/)
     return :rainy if description.match(/Rain/)
+    return :sunny
   end
 end

@@ -138,5 +138,9 @@ describe Weather do
       description_should_map_to_category("Rain / Snow", :snowy)
       description_should_map_to_category("Rain / Snow Showers", :snowy)
     end
+    it "should default to sunny" do
+      description_should_map_to_category("Fog", :sunny)
+      description_should_map_to_category("Mist", :sunny)
+    end
   end
 end

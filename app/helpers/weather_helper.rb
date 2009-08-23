@@ -63,15 +63,15 @@ module WeatherHelper
                    :cold_breezy_snowy => "snow_suit", :cold_breezy_rainy => "wet_suit", :cold_windy_sunny => "snow_suit",
                    :cold_windy_cloudy => "snow_suit", :cold_windy_snowy => "snow_suit", :cold_windy_rainy => "wet_suit",
 
-                   :chilly_calm_sunny => "bomber", :chilly_calm_cloudy => "chaps", :chilly_calm_snowy => "snow_suit",
-                   :chilly_calm_rainy => "wet_suit", :chilly_breezy_sunny => "bomber", :chilly_breezy_cloudy => "bomber",
-                   :chilly_breezy_snowy => "snow_suit", :chilly_breezy_rainy => "wet_suit", :chilly_windy_sunny => "bomber",
-                   :chilly_windy_cloudy => "bomber", :chilly_windy_snowy => "snow_suit", :chilly_windy_rainy => "wet_suit",
+                   :chilly_calm_sunny => "bomber_jacket", :chilly_calm_cloudy => "chaps", :chilly_calm_snowy => "snow_suit",
+                   :chilly_calm_rainy => "wet_suit", :chilly_breezy_sunny => "bomber_jacket", :chilly_breezy_cloudy => "bomber_jacket",
+                   :chilly_breezy_snowy => "snow_suit", :chilly_breezy_rainy => "wet_suit", :chilly_windy_sunny => "bomber_jacket",
+                   :chilly_windy_cloudy => "bomber_jacket", :chilly_windy_snowy => "snow_suit", :chilly_windy_rainy => "wet_suit",
                    
                    :warm_calm_sunny => "chaps", :warm_calm_cloudy => "chaps", :warm_calm_snowy => "snow_suit",
-                   :warm_calm_rainy => "poncho", :warm_breezy_sunny => "bomber", :warm_breezy_cloudy => "chaps",
+                   :warm_calm_rainy => "poncho", :warm_breezy_sunny => "bomber_jacket", :warm_breezy_cloudy => "chaps",
                    :warm_breezy_snowy => "snow_suit", :warm_breezy_rainy => "poncho", :warm_windy_sunny => "chaps",
-                   :warm_windy_cloudy => "bomber", :warm_windy_snowy => "snow_suit", :warm_windy_rainy => "wet_suit",
+                   :warm_windy_cloudy => "bomber_jacket", :warm_windy_snowy => "snow_suit", :warm_windy_rainy => "wet_suit",
                    
                    :hot_calm_sunny => "speedo", :hot_calm_cloudy => "speedo", :hot_calm_snowy => "speedo",
                    :hot_calm_rainy => "speedo", :hot_breezy_sunny => "speedo", :hot_breezy_cloudy => "speedo",
