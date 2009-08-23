@@ -94,6 +94,8 @@ a:hover
   background: #83A686;
   border-top: 8px solid #AA0000;
   border-bottom: 8px solid #AA0000;
+  position: relative;
+  z-index: 2;
 }
 
 #content
@@ -114,6 +116,8 @@ a:hover
   background: url(/images/bg_footer.gif) repeat-x 0 0;
   border-top: 1px solid #000000;
   font-size: 0.9em;
+  position: relative;
+  z-index: 1;
 }
 #footer p
 {
@@ -237,6 +241,7 @@ a:hover
 {
   right: 0;
   top: 50px;
+  z-index: 2;
 }
 
 .banner_details .top
