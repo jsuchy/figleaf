@@ -1,3 +1,4 @@
+- outfit = Outfit.find(@weather)
 #date_wrapper
   /= image_tag("arrow_left.png", :id => "arrow_left")
   /= image_tag("arrow_right.png", :id => "arrow_right")
@@ -10,19 +11,19 @@
   %h2 
     = @weather.description
   %p
-    = "#{head_garment_for(@weather)}!"
+    = outfit.head.display_text
 
 #banner_neck.banner
   %h2
     = "#{@weather.wind_speed} mph wind"
   %p
-    = "#{neck_garment_for(@weather)}!"
+    = outfit.neck.display_text
     
 #banner_body.banner
   %h2
     = "Feels like #{@weather.feels_like_in_farenheit}º F"
   %p
-    = "#{body_garment_for(@weather)}!"
+    = outfit.body.display_text
 
 #banner_details
   #details_content
@@ -36,6 +37,6 @@
         
 #character
   = image_tag("burt_nude.png")
-  = image_tag(garment_image_for(@weather, "body"))
-  = image_tag(garment_image_for(@weather, "head"))
-  = image_tag(garment_image_for(@weather, "neck"))    
+  = image_tag("body_#{outfit.body.garment}.png")
+  = image_tag("head_#{outfit.head.garment}.png")
+  = image_tag("neck_#{outfit.neck.garment}.png")

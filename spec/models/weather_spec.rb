@@ -66,6 +66,7 @@ describe Weather do
       end
     end
   end
+  
   describe "Wind:" do
     def wind_speed_should_map_to_description(speed, description_symbol)
       @wind.stub!(:speed).and_return(speed)

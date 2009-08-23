@@ -1,4 +1,5 @@
 module WeatherHelper
+    
   def garment_image_for(weather, body_section)
     return nil unless ["head", "neck", "body"].include?(body_section)
     garment = send("#{body_section}_garment_for", weather)
