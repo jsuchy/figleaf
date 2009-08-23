@@ -17,15 +17,15 @@ module WeatherHelper
                    :cold_breezy_snowy => "ushanka", :cold_breezy_rainy => "dive_helmet", :cold_windy_sunny => "ushanka",
                    :cold_windy_cloudy => "ushanka", :cold_windy_snowy => "ushanka", :cold_windy_rainy => "dive_helmet",
 
-                   :chilly_calm_sunny => "ushanka", :chilly_calm_cloudy => "ushanka", :chilly_calm_snowy => "ushanka",
-                   :chilly_calm_rainy => "dive_helmet", :chilly_breezy_sunny => "ushanka", :chilly_breezy_cloudy => "ushanka",
-                   :chilly_breezy_snowy => "ushanka", :chilly_breezy_rainy => "dive_helmet", :chilly_windy_sunny => "ushanka",
-                   :chilly_windy_cloudy => "ushanka", :chilly_windy_snowy => "ushanka", :chilly_windy_rainy => "dive_helmet",
+                   :chilly_calm_sunny => "cowboy_hat", :chilly_calm_cloudy => "ushanka", :chilly_calm_snowy => "eskimo",
+                   :chilly_calm_rainy => "rain_hat", :chilly_breezy_sunny => "ear_muffs", :chilly_breezy_cloudy => "ear_muffs",
+                   :chilly_breezy_snowy => "eskimo", :chilly_breezy_rainy => "rain_hat", :chilly_windy_sunny => "ear_muffs",
+                   :chilly_windy_cloudy => "ear_muffs", :chilly_windy_snowy => "ushanka", :chilly_windy_rainy => "dive_helmet",
                    
-                   :warm_calm_sunny => "ushanka", :warm_calm_cloudy => "ushanka", :warm_calm_snowy => "ushanka",
-                   :warm_calm_rainy => "dive_helmet", :warm_breezy_sunny => "ushanka", :warm_breezy_cloudy => "ushanka",
-                   :warm_breezy_snowy => "ushanka", :warm_breezy_rainy => "dive_helmet", :warm_windy_sunny => "ushanka",
-                   :warm_windy_cloudy => "ushanka", :warm_windy_snowy => "ushanka", :warm_windy_rainy => "dive_helmet",
+                   :warm_calm_sunny => "sunglasses", :warm_calm_cloudy => "nra_hat", :warm_calm_snowy => "dive_helmet",
+                   :warm_calm_rainy => "rain_hat", :warm_breezy_sunny => "sunglasses", :warm_breezy_cloudy => "cowboy_hat",
+                   :warm_breezy_snowy => "cowboy_hat", :warm_breezy_rainy => "rain_hat", :warm_windy_sunny => "sunglasses",
+                   :warm_windy_cloudy => "nra_hat", :warm_windy_snowy => "cowboy_hat", :warm_windy_rainy => "dive_helmet",
                    
                    :hot_calm_sunny => "sunglasses", :hot_calm_cloudy => "sunglasses", :hot_calm_snowy => "sunglasses",
                    :hot_calm_rainy => "dive_helmet", :hot_breezy_sunny => "sunglasses", :hot_breezy_cloudy => "sunglasses",
