@@ -1,5 +1,17 @@
 module WeatherHelper
-  def head_image_for(weather)
+  def garment_image_for(weather, body_section)
+    return nil unless ["head", "neck", "body"].include?(body_section)
+    garment = send("#{body_section}_garment_for", weather)
+    if garment
+      return "#{body_section}_#{garment}.png"
+    else
+      return "blank.png"
+    end
+  end
+  
+  private
+  
+  def head_garment_for(weather)
     head_images = {:cold_calm_sunny => "ushanka", :cold_calm_cloudy => "ushanka", :cold_calm_snowy => "ushanka",
                    :cold_calm_rainy => "dive_helmet", :cold_breezy_sunny => "ushanka", :cold_breezy_cloudy => "ushanka",
                    :cold_breezy_snowy => "ushanka", :cold_breezy_rainy => "dive_helmet", :cold_windy_sunny => "ushanka",
@@ -22,7 +34,7 @@ module WeatherHelper
     return head_images[lookup_symbol(weather)]
   end
   
-  def neck_image_for(weather)
+  def neck_garment_for(weather)
     neck_images = {:cold_calm_sunny => nil, :cold_calm_cloudy => nil, :cold_calm_snowy => "scarf",
                    :cold_calm_rainy => nil, :cold_breezy_sunny => "scarf", :cold_breezy_cloudy => "scarf",
                    :cold_breezy_snowy => "scarf", :cold_breezy_rainy => nil, :cold_windy_sunny => "scarf",
@@ -45,7 +57,7 @@ module WeatherHelper
     return neck_images[lookup_symbol(weather)]
   end
   
-  def body_image_for(weather)
+  def body_garment_for(weather)
     body_images = {:cold_calm_sunny => "snow_suit", :cold_calm_cloudy => "snow_suit", :cold_calm_snowy => "snow_suit",
                    :cold_calm_rainy => "wet_suit", :cold_breezy_sunny => "snow_suit", :cold_breezy_cloudy => "snow_suit",
                    :cold_breezy_snowy => "snow_suit", :cold_breezy_rainy => "wet_suit", :cold_windy_sunny => "snow_suit",
@@ -67,9 +79,6 @@ module WeatherHelper
                    :hot_windy_cloudy => "speedo", :hot_windy_snowy => "speedo", :hot_windy_rainy => "speedo"}
     return body_images[lookup_symbol(weather)]
   end
-  
-  
-  private
   
   def lookup_symbol(weather)
     return "#{weather.feels_like_description}_#{weather.wind_speed_description}_#{weather.description_category}".to_sym

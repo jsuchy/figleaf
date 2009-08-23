@@ -7,7 +7,9 @@ class Weather
   wrap_weather_man_response "forecast.today.high", "high"
   wrap_weather_man_response "current_conditions.feels_like.to_i", "feels_like_in_farenheit"
   wrap_weather_man_response "current_conditions.wind.speed.to_i", "wind_speed"
-  wrap_weather_man_response "forecast.today.day.description", "description"
+  wrap_weather_man_response "current_conditions.description", "description"
+  
+  attr_reader :weather_man_response
   
   def initialize(weather_man_response)
     @weather_man_response = weather_man_response

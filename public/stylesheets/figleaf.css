@@ -209,6 +209,7 @@ a:hover
 #banner_details table
 {
   border-collapse: collapse;
+  width: 100%;
 }
 
 #details_content
@@ -236,4 +237,11 @@ a:hover
   position: absolute;
   top: 76px;
   left: 344px;
+}
+
+#character img
+{
+  position: absolute;
+  top: 0;
+  left: 0;
 }
