@@ -52,36 +52,81 @@ describe Weather do
       end
     end
     
-    describe "high and low" do
-      it "should tell us the low temperature" do
-        @today.should_receive(:low).and_return(60)
-        weather = Weather.new(@weather_man_response)
-        weather.low.should == 60
-      end
+  end
+  
+  describe "basic information" do
+    before(:each) do
+      @weather = Weather.new(@weather_man_response)
+    end
+    it "should tell us the low temperature" do
+      @today.should_receive(:low).and_return(60)
+      @weather.low.should == 60
+    end
 
-      it "should tell us the high temperature" do
-        @today.should_receive(:high).and_return(80)
-        weather = Weather.new(@weather_man_response)
-        weather.high.should == 80
-      end
+    it "should tell us the high temperature" do
+      @today.should_receive(:high).and_return(80)
+      @weather.high.should == 80
+    end
+    
+    it "should return the uv index and description" do
+      uv = mock(WeatherManUV, :description => "Low", :index => "0")
+      @current_conditions.should_receive(:uv).twice.and_return(uv)
+      @weather.uv_description.should == "Low"
+      @weather.uv_index.should == 0
+    end
+    
+    it "should return the humidity" do
+      @current_conditions.should_receive(:humidity).and_return("84")
+      @weather.humidity.should == 84
+    end
+    
+    it "should return the pressure" do
+      baron_meter = mock(WeatherManBarometer, :description => "N/A", :reading => "29.45")
+      @current_conditions.should_receive(:barometric_pressure).and_return(baron_meter)
+      @weather.pressure.should == 29.45      
+    end
+    
+    it "return the dew point" do
+      @current_conditions.should_receive(:dew_point).and_return("56")
+      @weather.dew_point.should == 56
+    end
+    
+    it "should return the visibility range" do
+      @current_conditions.should_receive(:visibility).and_return("6.2")
+      @weather.visibility.should == 6.2
+    end
+
+    it "should return the sunrise time" do
+      @today.should_receive(:sunrise).and_return("6:17 AM")
+      @weather.sunrise_time.should == "6:17 AM"
+    end
+    
+    it "should return the sunset time" do
+      @today.should_receive(:sunset).and_return("8:46 PM")
+      @weather.sunset_time.should == "8:46 PM"
     end
   end
+  
   describe "Wind:" do
     def wind_speed_should_map_to_description(speed, description_symbol)
       @wind.stub!(:speed).and_return(speed)
-      weather = Weather.new(@weather_man_response)
-      weather.wind_speed_description.should == description_symbol
+      @weather.wind_speed_description.should == description_symbol
     end
     
     before(:each) do
       @wind = mock(WeatherManWind)
       @current_conditions.stub!(:wind).and_return(@wind)
+      @weather = Weather.new(@weather_man_response)
     end
 
     it "should tell us the wind speed" do
       @wind.should_receive(:speed).and_return("9")
-      weather = Weather.new(@weather_man_response)
-      weather.wind_speed.should == 9
+      @weather.wind_speed.should == 9
+    end
+    
+    it "should return the wind direction" do
+      @wind.should_receive(:direction).and_return("NW")
+      @weather.wind_direction.should == "NW"
     end
     
     describe "scales" do
@@ -138,7 +183,8 @@ describe Weather do
       description_should_map_to_category("Rain / Snow", :snowy)
       description_should_map_to_category("Rain / Snow Showers", :snowy)
     end
-    it "should default to sunny" do
+    
+    it "should default to cloudy" do
       description_should_map_to_category("Fog", :cloudy)
       description_should_map_to_category("Mist", :cloudy)
     end
