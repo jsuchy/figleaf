@@ -15,10 +15,10 @@ module WeatherHelper
                    :warm_breezy_snowy => "ushanka", :warm_breezy_rainy => "dive_helmet", :warm_windy_sunny => "ushanka",
                    :warm_windy_cloudy => "ushanka", :warm_windy_snowy => "ushanka", :warm_windy_rainy => "dive_helmet",
                    
-                   :hot_calm_sunny => "ushanka", :hot_calm_cloudy => "ushanka", :hot_calm_snowy => "ushanka",
-                   :hot_calm_rainy => "dive_helmet", :hot_breezy_sunny => "ushanka", :hot_breezy_cloudy => "ushanka",
-                   :hot_breezy_snowy => "ushanka", :hot_breezy_rainy => "dive_helmet", :hot_windy_sunny => "ushanka",
-                   :hot_windy_cloudy => "ushanka", :hot_windy_snowy => "ushanka", :hot_windy_rainy => "dive_helmet"}
+                   :hot_calm_sunny => "sunglasses", :hot_calm_cloudy => "sunglasses", :hot_calm_snowy => "sunglasses",
+                   :hot_calm_rainy => "dive_helmet", :hot_breezy_sunny => "sunglasses", :hot_breezy_cloudy => "sunglasses",
+                   :hot_breezy_snowy => "sunglasses", :hot_breezy_rainy => "dive_helmet", :hot_windy_sunny => "sunglasses",
+                   :hot_windy_cloudy => "sunglasses", :hot_windy_snowy => "sunglasses", :hot_windy_rainy => "dive_helmet"}
     return head_images[lookup_symbol(weather)]
   end
   
