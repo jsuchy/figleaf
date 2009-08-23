@@ -271,7 +271,7 @@ a:hover
 
 .banner_details.weather
 {
-  height: 250px;
+  height: auto;
   bottom: 10px;
 }
 
@@ -346,7 +346,7 @@ a:hover
   text-align: center;
 }
 
-#figleaf_input input
+.search input
 {
   font-size: 16px;
 }
