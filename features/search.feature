@@ -43,7 +43,10 @@ Feature: Search
     Then I should be on the homepage
     And I should see an error message
   
-  
-  
-  
-  
+  Scenario: Clearing error message when returning to homepage
+    Given I am on the homepage
+    When I fill in "location" with "London"
+    And I press "search"
+    Then I should see the cities for "London"
+    When I follow "header"
+    Then I should not see an error message

@@ -17,7 +17,7 @@ describe SearchController do
     post :index, :location => "some location"
     
     assigns[:cities].should == cities
-    flash[:errors].should_not be_empty
+    flash.now_cache[:errors].should_not be_empty
   end
   
   it "should redirect to the weather controller if there is only one match" do
