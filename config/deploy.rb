@@ -1,12 +1,9 @@
 set :application, "fig_leaf"
-set :repository, 'git@github.com:railsrumble/rr09-team-222.git'
-set :user, "root"
-set :domain, "#{user}@97.107.138.82"
-set :deploy_to, "/var/apps/fig_leaf"
+set :repository, 'git@github.com:ericmeyer/figleaf_weather.git'
+set :user, "eric"
+set :domain, "#{user}@24.12.224.37"
+set :deploy_to, "/var/apps/figleaf_weather"
 set :rails_env, "production"
-set :revision, "railsrumble09"
-# set :web_command, "sudo apache2ctl"
-
   
 namespace :vlad do
   

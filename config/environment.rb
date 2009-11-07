@@ -22,7 +22,6 @@ Rails::Initializer.run do |config|
   config.gem "xml-simple", :lib => "xmlsimple"
   config.gem "jdpace-weatherman", :lib => "weather_man"
   config.gem "haml"
-  config.gem "vlad", :version => "1.3.2"
   
   
   # Only load the plugins named here, in the order given (default is alphabetical).
