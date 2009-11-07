@@ -1,5 +1,5 @@
 set :application, "fig_leaf"
-set :repository, 'git@github.com:ericmeyer/figleaf_weather.git'
+set :repository, 'git://github.com/ericmeyer/figleaf_weather.git'
 set :user, "eric"
 set :domain, "#{user}@24.12.224.37"
 set :deploy_to, "/var/apps/figleaf_weather"
@@ -17,7 +17,7 @@ namespace :vlad do
       run "rm -rf #{deploy_to}/releases/#{release}"
       puts "Release #{release} removed"
     end
-    run "chown -R www-data:www-data #{deploy_to}/current/"
+    # run "chown -R www-data:www-data #{deploy_to}/current/"
   end
   
   desc "Updates your application server to the latest revision, run the migrate rake task for the the app, then restarts Passenger"
