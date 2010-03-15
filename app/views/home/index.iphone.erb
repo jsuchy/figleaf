@@ -1,0 +1,16 @@
+<div class='current' id='home'>
+  <div class='toolbar'>
+    <h1>Figleaf Weather</h1>
+  </div>
+  
+  <ul class='rounded'>
+    
+    <% @home_page_cities.each do |city, code| -%>
+      <li class='arrow'>
+        <%= link_to city, :controller => 'weather', :action => 'display', :id => code, :city_name => city %>
+      </li>
+    <% end -%>
+    
+  </ul>
+  
+</div>
