@@ -1,3 +1,5 @@
+require 'erb'
+
 class WeatherController < ApplicationController
   def display
     @weather = Weather.in(params[:id])
@@ -6,7 +8,9 @@ class WeatherController < ApplicationController
     if @weather.valid?
       respond_to do |format|
         format.html
-        format.iphone { render_iphone_display }
+        format.iphone do
+          render_iphone_display
+        end
       end
     else
       flash[:errors]= "No weather information for this location"
@@ -15,12 +19,10 @@ class WeatherController < ApplicationController
     
   end
   
+  private #################################################
+  
   def render_iphone_display
-    render :inline => "<div id='weather'>
-  <div class='toolbar'>
-    <a class='back'>Back</a>
-    <h1>#{@city_name}</h1>
-  </div>
-</div>"
+    template = ERB.new(File.read("app/views/weather/display.iphone.erb"))
+    render :inline => template.result(binding)
   end
 end
