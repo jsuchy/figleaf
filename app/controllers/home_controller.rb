@@ -8,8 +8,8 @@ class HomeController < ApplicationController
                           "Chicago, IL" => "USIL0225", 
                           "Lima, Peru" => "PEXX0011", 
                           "London, United Kingdom" => "UKXX0085", 
+                          "Moscow, Russia" => "RSXX0063",
                           "New York, NY" => "USNY0996", 
-                          "McMurdo, Antarctica" => "AYXX0010", 
                           "Sydney, Australia" => "ASXX0112", 
                           "Tokyo, Japan" => "JAXX0085", 
                           "Vancouver, Canada" => "CAXX0518"}.sort

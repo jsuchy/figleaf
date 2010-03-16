@@ -1,8 +1,8 @@
-#logo
+#tagline
 {
   text-align: center;
   display: block;
-  margin: 5px auto 0 auto;
+  margin: 5px auto 10px auto;
 }
 
 #character_area
@@ -12,6 +12,13 @@
   background: #FFFFFF url(/images/bg_canvas_white.jpg) repeat 0 0;
   border-top: 8px solid #AA0000;
   border-bottom: 8px solid #AA0000;
+}
+
+#logo
+{
+  position: absolute;
+  top: 5px;
+  left: 5px;
 }
 
 #character
@@ -34,7 +41,7 @@
   background: #FFFED4;
   border: 1px solid #000;
   margin: 5px;
-  padding: 0 0 8px 0 ;
+  padding: 0 8px 8px 8px;
   text-align: center;
 }
 
