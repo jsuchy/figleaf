@@ -4,10 +4,7 @@
     <h1><%= city_name %></h1>
   </div>
   <div id='character_area'>
-    <div class="banner">
-      <h2>Feels like <%= @weather.feels_like_in_farenheit %>ºF</h2>
-      <p><%= outfit.body.display_text %></p>
-    </div>
+    <img src="/images/wwbrw.png" id="logo" />
     <div id='character'>
       <img src="/images/burt_nude.png" />
       <img src="/images/body_<%= outfit.body.garment %>.png" />
@@ -15,13 +12,8 @@
       <img src="/images/neck_<%= outfit.neck.garment %>.png" />
     </div>
     <div class="banner">
-      <h2><%= weather.description %></h2>
-      <p><%= outfit.head.display_text %></p>
+      <h2>Feels like <%= @weather.feels_like_in_farenheit %>ºF / <%= weather.description %> / <%= weather.wind_speed %> mph wind</h2>
+      <p><%= outfit.body.display_text %> <%= outfit.head.display_text %> <%= outfit.neck.display_text %></p>
     </div>
-    <div class="banner">
-      <h2><%= weather.wind_speed %> mph wind</h2>
-      <p><%= outfit.neck.display_text %></p>
-    </div>
-
   </div>
 </div>
