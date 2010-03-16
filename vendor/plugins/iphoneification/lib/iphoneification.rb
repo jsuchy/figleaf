@@ -80,7 +80,7 @@ module IPhoneification
     # This method looks at the browser's user-agent string to determine
     # whether or not the current request is from an iPhone (or iPod Touch).
     def iphone_request?
-      (agent = request.env["HTTP_USER_AGENT"]) && agent[/(Mobile\/.+Safari)/]
+      (agent = request.env["HTTP_USER_AGENT"]) && (agent[/(Mobile\/.+Safari)/] || agent[/iPhone/])
     end
     
   end
