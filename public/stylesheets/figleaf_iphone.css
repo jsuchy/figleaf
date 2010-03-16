@@ -1,0 +1,43 @@
+#character_area
+{
+  position: relative;
+  width: 100%;
+  background: #FFFFFF url(/images/bg_canvas_white.jpg) repeat 0 0;
+  border-top: 8px solid #AA0000;
+  border-bottom: 8px solid #AA0000;
+}
+
+#character
+{
+  position: relative;
+  margin: 0 auto;
+  width: 210px;
+  height: 400px;
+}
+
+#character img
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.banner
+{
+  background: #FFFED4;
+  border: 1px solid #000;
+  margin: 5px;
+  padding: 0 0 8px 0 ;
+  text-align: center;
+}
+
+.banner h2
+{
+  padding-bottom: 3px;
+}
+
+.banner p
+{
+  font-size: 12px;
+  color: #000;
+}

@@ -22,6 +22,10 @@ class WeatherController < ApplicationController
   private #################################################
   
   def render_iphone_display
+    outfit = Outfit.find(@weather)
+    city_name = @city_name
+    weather = @weather
+
     template = ERB.new(File.read("app/views/weather/display.iphone.erb"))
     render :inline => template.result(binding)
   end
