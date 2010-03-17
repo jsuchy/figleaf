@@ -1,20 +1,20 @@
 <div id='weather'>
   <div class='toolbar'>
     <a class='back'>Back</a>
-    <h1><%= city_name %></h1>
+    <h1><%= @city_name %></h1>
   </div>
   <div id='character_area'>
-    <img src="/images/logo_small.png" id="logo" />
+    <%= image_tag "logo_small.png", :id => "logo" %>
     <div id='character'>
-      <img src="/images/burt_nude.png" />
-      <img src="/images/body_<%= outfit.body.garment %>.png" />
-      <img src="/images/head_<%= outfit.head.garment %>.png" />
-      <img src="/images/neck_<%= outfit.neck.garment %>.png" />
+      <%= image_tag "burt_nude.png" %>
+      <%= image_tag "body_#{@outfit.body.garment}.png" %>
+      <%= image_tag "head_#{@outfit.head.garment}.png" %>
+      <%= image_tag "neck_#{@outfit.neck.garment}.png" %>
     </div>
     <div class="banner">
-      <h2>Feels like <%= @weather.feels_like_in_farenheit %>ºF / <%= weather.description %> / <%= weather.wind_speed %> mph wind</h2>
-      <p><%= outfit.body.display_text %> <%= outfit.head.display_text %> <%= outfit.neck.display_text %></p>
+      <h2>Feels like <%= @weather.feels_like_in_farenheit %>ºF / <%= @weather.description %> / <%= @weather.wind_speed %> mph wind</h2>
+      <p><%= @outfit.body.display_text %> <%= @outfit.head.display_text %> <%= @outfit.neck.display_text %></p>
     </div>
-    <img src="/images/wwbrw_small.png" id="tagline" />
+    <%= image_tag "wwbrw_small.png", :id => "tagline" %>
   </div>
 </div>

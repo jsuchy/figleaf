@@ -1,5 +1,3 @@
-require 'erb'
-
 class WeatherController < ApplicationController
   def display
     @weather = Weather.in(params[:id])
@@ -9,24 +7,13 @@ class WeatherController < ApplicationController
       respond_to do |format|
         format.html
         format.iphone do
-          render_iphone_display
+          @outfit = Outfit.find(@weather)
+          render :layout => false
         end
       end
     else
       flash[:errors]= "No weather information for this location"
       redirect_to :controller => :home, :action => :index and return
     end
-    
-  end
-  
-  private #################################################
-  
-  def render_iphone_display
-    outfit = Outfit.find(@weather)
-    city_name = @city_name
-    weather = @weather
-
-    template = ERB.new(File.read("app/views/weather/display.iphone.erb"))
-    render :inline => template.result(binding)
   end
 end
