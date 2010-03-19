@@ -10,6 +10,7 @@ class SearchController < ApplicationController
     elsif
       flash.now[:errors]= "We found more than one city!"
       @homepage = true
+      set_home_page_cities
       render :template => 'home/index'
     end
   end

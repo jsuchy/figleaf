@@ -1,5 +1,5 @@
 set :application, "fig_leaf"
-set :repository, 'git://github.com/jsuchy/figleaf_weather.git'
+set :repository, 'git://github.com/8thlight/figleaf.git'
 set :user, "eric"
 set :domain, "#{user}@98.213.96.139"
 set :deploy_to, "/var/apps/figleaf_weather"

@@ -1,6 +1,10 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
 describe "home view spec" do
+  before(:each) do
+    assigns[:home_page_cities] = []
+  end
+  
   it "should have an input for the location on index" do
     render :template => "home/index"
     
