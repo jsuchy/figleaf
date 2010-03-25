@@ -21,7 +21,7 @@ namespace :vlad do
   end
   
   desc "Updates your application server to the latest revision, run the migrate rake task for the the app, then restarts Passenger"
-  remote_task :deploy => [:update, :migrate, :start_app]
+  remote_task :deploy => [:spec, :features, :update, :migrate, :start_app]
   
 end
 
