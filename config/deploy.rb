@@ -1,8 +1,8 @@
 set :application, "fig_leaf"
 set :repository, 'git://github.com/8thlight/figleaf.git'
-set :user, "eric"
-set :domain, "#{user}@98.213.96.139"
-set :deploy_to, "/var/apps/figleaf_weather"
+set :user, "root"
+set :domain, "#{user}@173.45.225.23"
+set :deploy_to, "/var/www/apps/figleaf_weather"
 set :rails_env, "production"
   
 namespace :vlad do
