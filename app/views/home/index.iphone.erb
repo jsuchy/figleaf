@@ -3,14 +3,9 @@
     <h1>Figleaf Weather</h1>
   </div>
   
-  <ul class='rounded'>
-    
-    <% @home_page_cities.each do |city, code| -%>
-      <li class='arrow'>
-        <%= link_to city, :controller => 'weather', :action => 'display', :id => code, :city_name => city %>
-      </li>
-    <% end -%>
-    
-  </ul>
+  <!-- insert an unordered list, css class of rounded looks nice -->
+  <!-- There is an instance variable called @home_page_cities that you can iterate through to create the list items -->
+  <!-- css class of arrow can be used for the list items -->
+  <!-- use link_to with the display action on the weather controller -->
   
 </div>
