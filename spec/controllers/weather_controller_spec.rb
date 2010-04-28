@@ -31,4 +31,30 @@ describe WeatherController do
     assigns[:weather].should == weather
     assigns[:city_name].should == "London, United Kingdom"
   end
+  
+  # failing iphone tests
+  it "sets the outfit on an iphone request" do
+    setup_iphone_request
+    weather = mock(Weather, :valid? => true)
+    Weather.stub!(:in).and_return(weather)
+    outfit = mock(Outfit)
+    Outfit.should_receive(:find).with(weather).and_return(outfit)
+    
+    get :display, :id => "irrelevant"
+    
+    assigns[:outfit].should == outfit
+  end
+  
+  it "does not render layout on an iphone request" do
+    setup_iphone_request
+    weather = mock(Weather, :valid? => true)
+    Weather.stub!(:in).and_return(weather)
+    Outfit.stub!(:find).and_return(nil)
+    
+    get :display, :id => "irrelevant"
+    
+    response.layout.should be_nil
+  end
+  
+  
 end

@@ -5,14 +5,11 @@ class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
   
-  # responds_to_iphone!   # always render iphone templates
   responds_to_iphone  # only render iphone templates if user agent is Mobile Safari
+  # responds_to_iphone! # always render iphone templates, e.g. if you can't change this in your browswer
   
   WeatherMan.partner_id = '1133672529'
   WeatherMan.license_key = 'ecb7aeada0996650'
-  
-  # Scrub sensitive parameters from your log
-  # filter_parameter_logging :password
   
   def set_home_page_cities
     @home_page_cities = { "Bangkok, Thailand" => "THXX0002", 
