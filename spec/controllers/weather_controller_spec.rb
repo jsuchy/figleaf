@@ -37,12 +37,28 @@ describe WeatherController do
     before(:each) do
       setup_iphone_request
       @weather = mock(Weather, :valid? => true)
+      Weather.stub!(:in).and_return(@weather)
       @outfit = mock(Outfit)
+      Outfit.stub!(:find).and_return(@outfit)
+    end
+    
+    it "renders iphone display for iPhone" do
+      setup_iphone_request
+
+      get :display, :id => "irrelevant"
+
+      response.should render_template("display.iphone.erb")
+    end
+
+    it "renders iphone display for Mobile Safari" do
+      setup_mobile_safari_request
+
+      get :display, :id => "irrelevant"
+
+      response.should render_template("display.iphone.erb")
     end
     
     it "sets the outfit on an iphone request" do
-      Weather.stub!(:in).and_return(@weather)
-      
       Outfit.should_receive(:find).with(@weather).and_return(@outfit)
 
       get :display, :id => "irrelevant"
@@ -51,9 +67,6 @@ describe WeatherController do
     end
 
     it "does not render layout on an iphone request" do
-      Weather.stub!(:in).and_return(@weather)
-      Outfit.stub!(:find).and_return(@outfit)
-
       get :display, :id => "irrelevant"
 
       response.layout.should be_nil
