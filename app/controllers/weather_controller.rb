@@ -7,5 +7,10 @@ class WeatherController < ApplicationController
       flash[:errors]= "No weather information for this location"
       redirect_to :controller => :home, :action => :index and return
     end
+    
+    respond_to do |format|
+      format.html
+      # format.iphone
+    end
   end
 end
