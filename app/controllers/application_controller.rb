@@ -3,8 +3,10 @@
 
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
-  protect_from_forgery # See ActionController::RequestForgeryProtection for details
-    
+  protect_from_forgery
+  
+  # A before_filter here to change the format of the request would be helpful
+  
   WeatherMan.partner_id = '1133672529'
   WeatherMan.license_key = 'ecb7aeada0996650'
   

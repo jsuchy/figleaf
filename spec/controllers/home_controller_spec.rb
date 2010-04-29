@@ -7,10 +7,9 @@ describe HomeController do
     
     assigns[:homepage].should == true
   end
-  
-  
-  # failing iphone tests - remove application_controller's responds_to_iphone call to make these fail
+    
   it "sets the format to iphone" do
+    # See spec/support/iphone.rb for the definition of this helper method
     setup_iphone_request
     
     get :index
