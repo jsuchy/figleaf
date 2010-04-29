@@ -8,5 +8,3 @@ require 'rake/testtask'
 require 'rake/rdoctask'
 
 require 'tasks/rails'
-require 'vlad'
-Vlad.load :scm => :git, :app => "passenger"
