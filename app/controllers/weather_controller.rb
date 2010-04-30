@@ -8,9 +8,5 @@ class WeatherController < ApplicationController
       redirect_to :controller => :home, :action => :index and return
     end
     
-    respond_to do |format|
-      format.html
-      # format.iphone
-    end
   end
 end
