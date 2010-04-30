@@ -8,13 +8,7 @@ describe HomeController do
     assigns[:homepage].should == true
   end
   
-  it "does not set format to iphone for non-iphone request" do
-    get :index
-    
-    request.parameters["format"].should be_nil
-  end
-    
-  it "sets the format to iphone" do
+  it "sets the format to iphone for iPhone" do
     # See spec/support/iphone.rb for the definition of this helper method
     pending
     setup_iphone_request
@@ -22,6 +16,13 @@ describe HomeController do
     get :index
     
     request.parameters["format"].should == "iphone"
+  end
+  
+  it "does not set format to iphone for non-iphone request" do
+    pending
+    get :index
+    
+    request.parameters["format"].should be_nil
   end
   
   it "sets the format for Mobile Safari" do

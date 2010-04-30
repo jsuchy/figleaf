@@ -41,22 +41,22 @@ describe WeatherController do
       Outfit.stub!(:find).and_return(@outfit)
     end
     
-    it "renders iphone display for iPhone" do
+    it "sets the format to iphone for iPhone" do
       pending
       setup_iphone_request
       
       get :display, :id => "irrelevant"
 
-      response.should render_template("display.iphone.erb")
+      request.parameters["format"].should == "iphone"
     end
 
-    it "renders iphone display for Mobile Safari" do
+    it "sets the format for Mobile Safari" do
       pending
       setup_mobile_safari_request
 
       get :display, :id => "irrelevant"
 
-      response.should render_template("display.iphone.erb")
+      request.parameters["format"].should == "iphone"
     end
     
     it "sets the outfit on an iphone request" do
